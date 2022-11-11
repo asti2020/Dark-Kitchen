@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: react_rails_api_project_template_development
+  database: "postgres://dark_kitchen_user:hb9273GIOHJW1jRkKLFUJzL1FLW1yk0x@dpg-cdnb2umn6mpi4ksko8kg-a/dark_kitchen"
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: react_rails_api_project_template_test
+  database: "postgres://dark_kitchen_user:hb9273GIOHJW1jRkKLFUJzL1FLW1yk0x@dpg-cdnb2umn6mpi4ksko8kg-a/dark_kitchen"
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -65,8 +65,6 @@ test:
 #
 # Instead, provide the password or a full connection URL as an environment
 # variable when you boot the app. For example:
-#
-#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 #
 # If the connection URL is provided in the special DATABASE_URL environment
 # variable, Rails will automatically merge its configuration values on top of
