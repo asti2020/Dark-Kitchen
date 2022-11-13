@@ -4,8 +4,8 @@ import Signup from './Signup';
 import { useState, useEffect } from 'react';
 import  Login  from './Login';
 import  { Logout }  from './Logout';
-import Home from './Home';
-import { Route, Switch } from 'react-router-dom';
+// import Home from './Home';
+// import { Route, Switch } from 'react-router-dom';
 import NavList from './NavList';
 
 
