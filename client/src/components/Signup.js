@@ -1,54 +1,71 @@
 
-// import ReactDOM from'react-dom';
 import React from 'react';
 import {useState} from 'react';
 
-// import { Provider } from'react-redux';
-// import { createStore, applyMiddleware } from'redux';    
-
-function Signup() {
-
-const [fullName, setName] = useState('');
-const [userName, setUsername] = useState('');
+function Signup({setUser}) {
+const [full_name, setName] = useState('');
+const [username, setUsername] = useState('');
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
-const [conformPassword, setConPassword] = useState('');
-const [userType, setUserType] = useState('');
+const [password_confirmation, setConPassword] = useState('');
+const [user_type, setUserType] = useState('');
 const [errors, setErrors] = useState([]);
+const[formDisplay, setFormDisplay] = useState(true);
 
             const handleSubmit = (e) => {
                 e.preventDefault();
                 const user = {
-                    fullName,
-                    userName,
-                    email,
-                    password,
-                    conformPassword,
-                    userType
+                    full_name: full_name,
+                    username: username,
+                    email: email,
+                    password: password,
+                    password_confirmation: password_confirmation,
+                    user_type: user_type
 
                 }
-                fetch('')
-                console.log(user);
-                    setErrors([]);
-
+                fetch('/users', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                .then(res => {
+                    if (res.ok) {
+                        res.json()
+                        .then(user => {
+                            setUser(user)})
+                    } else {
+                        res.json()
+                        .then(er => setErrors(er.errors))
+                    }     
+                })
             }
 console.log(errors)
 
+            const handleClickForm = (e) => {
+                e.preventDefault();
+                setFormDisplay(!formDisplay)
+            }
+
+
+
     return (
         <div>
-            <h3>Signup</h3>
-            <form onSubmit={handleSubmit}>
-                        <div>
+            <h3 onClick={handleClickForm}>Signup</h3>
+            { formDisplay ? null :
+                <form onSubmit={handleSubmit}>
+                    <div>
                             <input type= "text" 
                             name="full_name" 
                             placeholder="Full Name" 
-                            value={fullName}
+                            value={full_name}
                             onChange={(e) => setName(e.target.value)}
                             />
                             <input type= "text"
                                 name="username"
                                 placeholder="Username" 
-                                value={userName}
+                                value={username}
                                 onChange={e => setUsername(e.target.value)}
                             />
                             <input type= "text"
@@ -60,7 +77,7 @@ console.log(errors)
                             <input type= "text" 
                                 name="user_type" 
                                 placeholder="User Type" 
-                                value={userType}
+                                value={user_type}
                                 onChange={(e) => setUserType(e.target.value)}
                             />
                             <input type= "text" 
@@ -69,19 +86,24 @@ console.log(errors)
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-
                             <input type= "text" 
                                 name="conform_password" 
                                 placeholder="Conform Password"
-                                value={conformPassword}
+                                value={password_confirmation}
                                 onChange={(e) => setConPassword(e.target.value)}
                             />
-                        </div>
-                        <div>
-                            <button type="submit">Signup</button>
-                        </div>
-
+                    </div>
+                    <div>
+                        <button type="submit">Signup</button>
+                    </div>
                 </form>
+            }
+
+                <div>
+                    <ul>
+                        {errors.map(error => <li key={error}>{error}</li>)}
+                    </ul>
+                </div>
 
         </div>
     )
