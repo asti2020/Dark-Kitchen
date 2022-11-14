@@ -12,7 +12,7 @@ const [fullName, setName] = useState('');
 const [userName, setUsername] = useState('');
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
-const [conformPassword, setConPassword] = useState('');
+const [confirmPassword, setConPassword] = useState('');
 const [userType, setUserType] = useState('');
 const [errors, setErrors] = useState([]);
 
@@ -23,7 +23,7 @@ const [errors, setErrors] = useState([]);
                     userName,
                     email,
                     password,
-                    conformPassword,
+                    confirmPassword,
                     userType
 
                 }
@@ -83,14 +83,17 @@ console.log(errors)
                         <div id='confirm'>
                             <input type= "text" 
                                 name="confirm_password" 
-                                placeholder="Conform Password"
-                                value={conformPassword}
+                                placeholder="Confirm Password"
+                                value={confirmPassword}
                                 onChange={(e) => setConPassword(e.target.value)}
                             />
                         </div>
                         <div>
-                            <button type="submit">Signup</button>
+                            <button id='signupBtn' type="submit">Signup</button>
                         </div>
+                         <p><span>Or</span></p>
+
+                         <a id='loginBtn' href='/'>Already have an account?</a>
 
                 </form>
 

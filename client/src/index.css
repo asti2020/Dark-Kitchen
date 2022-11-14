@@ -20,7 +20,7 @@
   height: 100px;
 }
 .signupLogin {
-  background-color: var(--lightgrey);
+  background-color: #FFF;
   border-radius: 20px;
   text-align: center;
   box-shadow: 6px 6px 20px var(--darkgrey);
@@ -30,6 +30,39 @@
 }
 #fullName, #username, #email, #userType, #password, #confirm {
   margin: 20px 0;
+}
+
+input {
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: 0.8px solid var(--darkgrey);
+}
+
+p {
+  width: 50%;
+  text-align: center;
+  border-bottom: 1px solid var(--lightgrey);
+  line-height: 0.1em;
+  margin: auto;
+  margin-top: 30px !important;
+} 
+
+p span { 
+   background:#FFF; 
+   padding:0 10px; 
+}
+
+#loginBtn {
+  text-decoration: none;
+  color: var(--darkgrey);
+}
+
+#signupBtn {
+  border-radius: 25px;
+  padding: 8px 30px;
+  border: none;
+  background-color: var(--red);
+  color: var(--lightgrey);
 }
 
 /*******************************************  SignUp/Login  ***************************************/
