@@ -6,17 +6,33 @@
   --darkgrey: #3F3F41;
   --darkbrown: #3B2514;
 }
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  
+#root {
+  background-image: url(./BGPhase4.jpg);
+  background-size: cover;
+  height: 100vh;
 }
 
+/*******************************************  SignUp/Login  ***************************************/
+.sandlContainer {
+  text-align: -webkit-center;
+}
+#topRow {
+  height: 100px;
+}
+.signupLogin {
+  background-color: var(--lightgrey);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 6px 6px 20px var(--darkgrey);
+  height: 70vh;
+  width: 50%;
+  padding: 20px;
+}
+#fullName, #username, #email, #userType, #password, #confirm {
+  margin: 20px 0;
+}
+
+/*******************************************  SignUp/Login  ***************************************/
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

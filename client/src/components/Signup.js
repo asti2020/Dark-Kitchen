@@ -35,43 +35,54 @@ const [errors, setErrors] = useState([]);
 console.log(errors)
 
     return (
-        <div>
-            <h3>Signup</h3>
+        <>
+        <div id='topRow' className='row'></div>
+        <div className='signupLogin'>
+            <h3>Eat or Cook!</h3>
             <form onSubmit={handleSubmit}>
-                        <div>
+                        <div id='fullName'>
                             <input type= "text" 
                             name="full_name" 
                             placeholder="Full Name" 
                             value={fullName}
                             onChange={(e) => setName(e.target.value)}
                             />
+                        </div>
+                        <div id='username'>
                             <input type= "text"
                                 name="username"
                                 placeholder="Username" 
                                 value={userName}
                                 onChange={e => setUsername(e.target.value)}
                             />
+                        </div>
+                        <div id='email'>
                             <input type= "text"
                                 name="email" 
                                 placeholder="Email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
+                        </div>
+                        <div id='userType'>
                             <input type= "text" 
                                 name="user_type" 
                                 placeholder="User Type" 
                                 value={userType}
                                 onChange={(e) => setUserType(e.target.value)}
                             />
+                        </div>
+                        <div id='password'>
                             <input type= "text" 
                                 name="password"
                                 placeholder="Password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-
+                        </div>
+                        <div id='confirm'>
                             <input type= "text" 
-                                name="conform_password" 
+                                name="confirm_password" 
                                 placeholder="Conform Password"
                                 value={conformPassword}
                                 onChange={(e) => setConPassword(e.target.value)}
@@ -84,6 +95,7 @@ console.log(errors)
                 </form>
 
         </div>
+        </>
     )
 }
 
