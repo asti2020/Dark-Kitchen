@@ -28,16 +28,8 @@ function Login({setUser}) {
                 .then(user => {
                     localStorage.setItem('jwt', user.jwt)
                     setUser(user)
-                    // if (user.user_type === "chef") {
-                    //     window.location.href = '/dashboard'
-                    // } else {
-                    //     window.location.href = '/'
-                    // }
                 })
-                
                     }
-
-                    // console.log(user.jwt)
         })
     }
     console.log(errors)

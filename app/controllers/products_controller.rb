@@ -16,8 +16,23 @@ class ProductsController < ApplicationController
         end
     end
 
+    def update
+        if current_user.user_type == "chef"
+            product = Product.find(params[:id])
+            product.update(product_params)
+            render json: product, status: :accepted
+        else
+            render json: {error: "You are not a chef"}, status: :unauthorized
+        end
+    end
 
-
+    def destroy
+        if current_user.user_type == "chef"
+            product = Product.find(params[:id])
+            product.destroy
+            head :no_content
+        end
+    end
 
 private
 

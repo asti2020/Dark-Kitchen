@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: "postgres://dark_kitchen_user:hb9273GIOHJW1jRkKLFUJzL1FLW1yk0x@dpg-cdnb2umn6mpi4ksko8kg-a/dark_kitchen"
+  database: dark_kitchen_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
