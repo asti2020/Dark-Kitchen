@@ -18,33 +18,33 @@ function NavList() {
       <ul>
         <li>
           <NavLink
-            to="messages"
+            to="Home"
             style={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
           >
-            Messages
+            Home
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="Home"
+            to="Profile"
             className={({ isActive }) =>
               isActive ? activeClassName : undefined
             }
           >
-            Tasks
+            Profile
           </NavLink>
         </li>
         <li>
-          <NavLink to="Profile">
+          <NavLink to="Cart">
             {({ isActive }) => (
               <span
                 className={
                   isActive ? activeClassName : undefined
                 }
               >
-                Tasks
+                Cart
               </span>
             )}
           </NavLink>

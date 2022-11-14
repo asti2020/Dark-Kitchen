@@ -1,3 +1,21 @@
 .App {
   text-align: center;
 }
+.food-card{
+  width: 50%;
+  height: 50%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.foodImage{
+  width: 100px;
+  height: 100px;
+}

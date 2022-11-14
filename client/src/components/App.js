@@ -4,8 +4,8 @@ import Signup from './Signup';
 import { useState, useEffect } from 'react';
 import  Login  from './Login';
 import  { Logout }  from './Logout';
-// import Home from './Home';
-// import { Route, Switch } from 'react-router-dom';
+import Home from './Home';
+import { Route, Routes} from 'react-router-dom';
 import NavList from './NavList';
 
 
@@ -17,7 +17,8 @@ function App() {
     .then(res => {
       if (res.ok) {
         res.json()
-        .then(user => setUser(user))
+        .then(user => 
+        setUser(user))
       }
     })
   }, [])
@@ -26,10 +27,14 @@ function App() {
   return (
     <div className="App" >
       <h4>Dark Kitchen</h4>
-      <NavList user={user} setUser={setUser}/>
+      <NavList user={user} setUser={setUser}/> 
       {user ?  <Login setUser={setUser} /> : <Signup setUser={setUser} />}
       {user ? <Logout setUser={setUser} /> : <Login setUser={setUser} />}
-      {/* <Signup setUser={setUser} /> */}
+
+    <Routes>
+        <Route exact path="/"  element={<Home />} />
+    </Routes>
+
 
     </div>
   );
