@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :carts
   resources :orders
   resources :products
   resources :users, only: [:create]
