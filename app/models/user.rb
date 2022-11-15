@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  
+  has_many :products
+  has_many :carts 
+  has_many :orders
 
     has_secure_password
     validates :full_name, presence: true, length: { maximum: 20 }
