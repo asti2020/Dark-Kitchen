@@ -46,17 +46,17 @@ function Login({setUser}) {
     return (
     <div  id='landingPageDiv'>
         <div id='formDiv'>
-            <h3 id='homeH3'>Eat or Cook!</h3>
+            <h1 id='homeH3'>Eat or Cook!</h1>
             <form onSubmit={handleSubmit}>
-                <div>
-                    <input type= "text" 
+                <div className='loginInputDiv'>
+                    <input className='loginInput' type= "text" 
                     name="username" 
                     placeholder="Username" 
                     value={username}
                     onChange={(e) => setUsername(e.target.value)} />
                 </div>
-                <div>
-                    <input type= "password" 
+                <div className='loginInputDiv'>
+                    <input className='loginInput' type= "password" 
                     name="password" 
                     placeholder="Password" 
                     value={password}

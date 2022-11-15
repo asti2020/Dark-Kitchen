@@ -28,7 +28,7 @@ body {
 #formDiv {
   background-color: var(--lightGrey);
   display: inline-block;
-  width: 50%;
+  width: 35%;
   text-align: center;
   position: absolute;
   left: 50%;
@@ -36,6 +36,17 @@ body {
   height: 450px;
   padding: 50px;
   transform: translate(-50%, -50%);
+  border-radius: 5%;
+}
+.loginInputDiv {
+  margin: 10px;
+}
+.loginInput {
+  border-radius: 10px;
+  border: none;
+  width: 50%;
+  height: 28px;
+  padding: 10px;
 }
 
 
