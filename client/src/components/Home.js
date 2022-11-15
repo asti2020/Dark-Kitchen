@@ -14,7 +14,6 @@ function Home({user}) {
 
         const newFood = (food) => {
             setFoods([...foods, food])
-
         }
         console.log(foods)
             return ( 

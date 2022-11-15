@@ -2,7 +2,7 @@ import React from 'react'
 import FoodForm from './FoodForm'
 // import {useNavigate} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
-import { FoodList } from './FoodList'
+import { FoodList } from './FoodList';
 
 
 export const ChefProfile = ({user}) => {

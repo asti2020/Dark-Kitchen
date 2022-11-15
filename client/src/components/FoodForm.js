@@ -2,7 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 import { useNavigate } from "react-router-dom";
 
-function FoodForm({foods, newFood, user}) {
+function FoodForm({ user }) {
     const navigate = useNavigate();
     const[foodName, setFoodName] = useState("")
     const[foodPrice, setPrice] = useState("")
@@ -40,26 +40,27 @@ function FoodForm({foods, newFood, user}) {
             navigate('/home')
         }
     }
-    console.log(foods)  
+    // console.log(foods)  
 
-//     const handleUpdateForm = (e) => {
-//         e.preventDefault();
-//         fetch("/products/:id", {
-//             method: "PATCH",
-//             headers: {
-//                 "Content-Type": "application/json"
-//             },
-//             body: JSON.stringify({
-//                 name: foodName,
-//                 price: foodPrice,
-//                 ingredients: ingreDients,
-//                 picture: foodPicture,
-//                 category: cateGory
-//             })
-//         })
-//         .then(res => res.json())
-//     .then((food) => console.log(food))
-// }
+    const handleUpdateForm = (e) => {
+        e.preventDefault();
+        fetch("/products/:id", {
+            method: "PATCH",
+            headers: {
+                Authorization: "Bearer " + token,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: foodName,
+                price: foodPrice,
+                ingredients: ingreDients,
+                picture: foodPicture,
+                category: cateGory
+            })
+        })
+        .then(res => res.json())
+    .then((food) => console.log(food))
+}
 
 
     return (
@@ -103,9 +104,10 @@ function FoodForm({foods, newFood, user}) {
                 />
             </div>
             <button className="btn btn-primary">Submit</button>
+            <button onClick={handleUpdateForm} className="btn btn-primary">Update</button>
 
         </form>
-        {/* <button onClick={handleDelete} className="btn btn-primary">DELETE</button> */}
+        {/* <button onClick={handleUpdateForm} className="btn btn-primary">Update</button> */}
 
     </div>
     )

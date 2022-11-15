@@ -30,12 +30,6 @@ function App() {
   console.log(user.user_type)
   return (
     <div className="App" >
-      {/* <h4>Dark Kitchen</h4>
-      <NavList user={user} setUser={setUser}/>  */}
-
-      {/* {user ?  <Login setUser={setUser} /> : <Signup setUser={setUser} />}
-      {user ? <Logout setUser={setUser} /> : <Login setUser={setUser} />}  */}
-
     <Routes>
         <Route exact path="/"  element={<Home user={user} />} />
         <Route exact path="/home"  element={<Home user={user}/>} />
