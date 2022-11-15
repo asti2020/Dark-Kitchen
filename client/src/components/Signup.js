@@ -57,46 +57,56 @@ console.log(errors)
             {formDisplay ? null : 
                 <>
                 <form onSubmit={handleSubmit}>
-                    <div>
-                            <input type= "text" 
-                            name="full_name" 
-                            placeholder="Full Name" 
-                            value={full_name}
-                            onChange={(e) => setName(e.target.value)}
-                            />
-                            <input type= "text"
-                                name="username"
-                                placeholder="Username" 
-                                value={username}
-                                onChange={e => setUsername(e.target.value)}
-                            />
-                            <input type= "text"
-                                name="email" 
-                                placeholder="Email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <input type= "text" 
-                                name="user_type" 
-                                placeholder="User Type" 
-                                value={user_type}
-                                onChange={(e) => setUserType(e.target.value)}
-                            />
-                            <input type= "text" 
-                                name="password"
-                                placeholder="Password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                            <input type= "text" 
-                                name="conform_password" 
-                                placeholder="Conform Password"
-                                value={password_confirmation}
-                                onChange={(e) => setConPassword(e.target.value)}
-                            />
+                    <div className='signInInputDiv'>
+                        <input className='signInInput' type= "text" 
+                        name="full_name" 
+                        placeholder="Full Name" 
+                        value={full_name}
+                        onChange={(e) => setName(e.target.value)}
+                        />
+                    </div>
+                    <div className='signInInputDiv'>
+                        <input className='signInInput' type= "text"
+                            name="username"
+                            placeholder="Username" 
+                            value={username}
+                            onChange={e => setUsername(e.target.value)}
+                        />
+                    </div>
+                    <div className='signInInputDiv'>
+                        <input className='signInInput' type= "text"
+                            name="email" 
+                            placeholder="Email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <div className='signInInputDiv'>
+                        <input className='signInInput' type= "text" 
+                            name="user_type" 
+                            placeholder="User Type" 
+                            value={user_type}
+                            onChange={(e) => setUserType(e.target.value)}
+                        />
+                    </div>
+                    <div className='signInInputDiv'>
+                        <input className='signInInput' type= "text" 
+                            name="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <div className='signInInputDiv'>
+                        <input className='signInInput' type= "text" 
+                            name="confirm_password" 
+                            placeholder="Confirm Password"
+                            value={password_confirmation}
+                            onChange={(e) => setConPassword(e.target.value)}
+                        />
                     </div>
                     <div>
-                        <button type="submit">Signup</button>
+                        <button className='loginBtn' type="submit">Signup</button>
                     </div>
                 </form>
             </>  

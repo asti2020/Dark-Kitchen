@@ -33,8 +33,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 450px;
-  padding: 50px;
+  height: 600px;
+  padding: 20px;
   transform: translate(-50%, -50%);
   border-radius: 5%;
 }
@@ -47,8 +47,64 @@ body {
   width: 50%;
   height: 28px;
   padding: 10px;
+  text-align: center;
 }
+.loginBtn {
+  position: relative;
+  background-color: var(--white);
+  border: none;
+  font-size: 1.2rem;
+  color: var(--darkGrey);
+  padding: 5px;
+  width: 100px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.loginBtn:after {
+  content: "";
+  background: var(--red);
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+.loginBtn:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+#homePTage {
+  width: 50%;
+  text-align: center;
+  border-bottom: 1px solid var(--white);
+  line-height: 0.1em;
+  margin: 20px auto;
+} 
 
-
+#homePTage span { 
+   background: var(--lightGrey); 
+   padding:0 10px; 
+}
+.signInInputDiv {
+  margin: 10px;
+}
+.signInInput {
+  border-radius: 10px;
+  border: none;
+  width: 50%;
+  height: 25px;
+  padding: 5px;
+  text-align: center;
+}
 /**************************************   Sign up/ Login   **********************************/
 
