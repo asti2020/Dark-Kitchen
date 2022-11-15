@@ -40,27 +40,39 @@ function FoodForm({ user }) {
             navigate('/home')
         }
     }
-    // console.log(foods)  
 
     const handleUpdateForm = (e) => {
+        console.log("the edit is comming")
         e.preventDefault();
-        fetch("/products/:id", {
-            method: "PATCH",
-            headers: {
-                Authorization: "Bearer " + token,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name: foodName,
-                price: foodPrice,
-                ingredients: ingreDients,
-                picture: foodPicture,
-                category: cateGory
+        if (user.user_type === 'chef') {
+
+            fetch('/products', {
+                method: "PATCH",
+                headers: {
+                    Authorization: "Bearer " + token,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    food_name: foodName,
+                    price: foodPrice,
+                    ingredient: ingreDients,
+                    picture: foodPicture,
+                    category: cateGory
+                })
             })
-        })
-        .then(res => res.json())
-    .then((food) => console.log(food))
-}
+        } else {
+            return (
+                <div className="container">
+                    <div className="jumbotron">
+                        <h1 className="display-4">Welcome, {user.user_type}!</h1>
+                        <p className="lead">
+
+                </p>
+                    </div>
+                </div>
+            );
+    }}
+
 
 
     return (
@@ -107,8 +119,6 @@ function FoodForm({ user }) {
             <button onClick={handleUpdateForm} className="btn btn-primary">Update</button>
 
         </form>
-        {/* <button onClick={handleUpdateForm} className="btn btn-primary">Update</button> */}
-
     </div>
     )
 }

@@ -5,6 +5,7 @@ import {useState, useEffect} from 'react'
 
 function Home({user}) {
     const [foods, setFoods] = useState([])
+    
     console.log(user)
         useEffect (() => {
             fetch("/products")

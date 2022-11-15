@@ -5,7 +5,8 @@ export const FoodList = ({foods, newFood, user}) => {
     return (
         <div>
 
-                <ul>{
+                <ul>
+                {
                     foods.map
                     (food => {
                         return <FoodCard key={food.id} food={food} user={user}/>

@@ -14,9 +14,9 @@ export const Delete = () => {
             .then(res => res.json())
             .then((food) => console.log(food))
     }
-  return (
-    <div>
-        <button onClick={handleDelete} className="btn btn-primary">DELETE</button>
-    </div>
-  )
+    return (
+        <div>
+            <button onClick={handleDelete} className="btn btn-primary">DELETE</button>
+        </div>
+    )
 }
