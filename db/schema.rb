@@ -16,9 +16,10 @@ ActiveRecord::Schema.define(version: 2022_11_15_183701) do
   enable_extension "plpgsql"
 
   create_table "cartlines", force: :cascade do |t|
+    t.integer "cart_id"
     t.integer "order_id"
     t.integer "product_id"
-    t.integer "quantity"
+    t.integer "quantity", default: 1
     t.float "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -33,7 +34,10 @@ ActiveRecord::Schema.define(version: 2022_11_15_183701) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "product_id"
+    t.string "name"
+    t.string "email_address"
+    t.integer "address"
+    t.string "pay_method"
     t.boolean "complete"
     t.float "total_price"
     t.datetime "created_at", precision: 6, null: false

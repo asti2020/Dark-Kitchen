@@ -112,10 +112,5 @@ Product.create!(id: 92, name: "Pot de Cremes", price: 7, quantity: 15, ingredien
 Product.create!(id: 93, name: "Black Forest Cake", price: 12, quantity: 7, ingredients: "Flour, Sugar, Cocoa Powder, Baking Powder, Baking Soda, Eggs, Milk, Vegetable Oil, Sour Cherries, Cherry Liquor", allergens: "Wheat, Eggs, Dairy, Alcohol", description: "A German classic: layers of moist, liquor-infused chocolate cake with sweet cream and sour cherries. Delicious!", category: "Dessert", calories: 3300, image_url: "https://livforcake.com/wp-content/uploads/2017/07/black-forest-cake-thumb.jpg")
 Product.create!(id: 94, name: "Lemon Merengue Pie", price: 11, quantity: 6, ingredients: "Flour, Butter, Cream, Sugar, Eggs, Lemon Zest, Lemon Juice", allergens: "Wheat, Dairy", description: "Crisp, refreshing, and delicious!", category: "Dessert", calories: 2760, image_url: "https://dinnerthendessert.com/wp-content/uploads/2022/01/Lemon-Meringue-Pie-1x1-1.jpg")
 
-puts "seeding orders"
-Order.create!(id: 1, user_id: 1, product_id: 1, complete: false)
-
-puts "seeding carts"
-Cart.create!(id: 1, user_id: 1, order_id: 1)
 
 puts "Done seeding database."
