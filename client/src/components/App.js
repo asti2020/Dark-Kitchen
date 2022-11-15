@@ -25,7 +25,7 @@ function App() {
       .then(res => res.json())
       .then(user => setUser(user))
 
-  }, [])
+  }, [ jwt_token])
 
   console.log(user.user_type)
   return (
@@ -38,7 +38,7 @@ function App() {
 
     <Routes>
         <Route exact path="/"  element={<Home user={user} />} />
-        <Route exact path="/home"  element={<Home />} />
+        <Route exact path="/home"  element={<Home user={user}/>} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/signup" element={<Signup setUser={setUser} />} />
         <Route path="/logout" element={<Logout setUser={setUser} />} />
