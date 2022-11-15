@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :orders
+  resources :products
   resources :users, only: [:create]
   get '/me', to: "users#me"
   post '/auth/login', to: "auths#login"
