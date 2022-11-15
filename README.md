@@ -2,7 +2,7 @@
 
 ## Description
 
-We will be creating a dark kitchen react-rails app. Users will be able to log in as either a "Chef" or a "User." A Chef will have full CRUD capabilities, being able to create, read, update, and delete food (product) listings. Users will have partial crud capabilities: the ability to read listings, and create reviews. 
+We will be creating a dark kitchen react-rails app. Users will be able to log in as either a "Chef" or a "User." A Chef will have full CRUD capabilities, being able to create, read, update, and delete food (product) listings. Users will have partial crud capabilities: the ability to read listings and create reviews. 
 
 ## Requirements
 

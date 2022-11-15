@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :cartlines
   resources :carts
   resources :orders
   resources :products

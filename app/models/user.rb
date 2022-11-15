@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  
+
     has_secure_password
     validates :full_name, presence: true, length: { maximum: 20 }
     validates :email, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }, uniqueness: true
