@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :handle_invalid_record
     skip_before_action :authorized, only: [:index]
+        before_action :authorized, only: [ :create ]
 
     def index
         products = Product.all
@@ -13,6 +14,7 @@ class ProductsController < ApplicationController
             render json: product, status: :created
         else
             render json: {error: "You are not a chef"}, status: :unauthorized
+            # render get '/login', status: :unauthorized
         end
     end
 

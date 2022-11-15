@@ -1,57 +1,66 @@
 import React from 'react'
 import {useState} from 'react'
+import { useNavigate } from "react-router-dom";
 
-function FoodForm() {
-const[foodName, setFoodName] = useState(" ")
-const[foodPrice, setPrice] = useState(" ")
-const[ingreDients, setIngredients] = useState(" ")
-const[foodPicture, setFoodPicture] = useState(" ")
-const[cateGory, setCategory] = useState(" ")
+function FoodForm({foods, newFood, user}) {
+    const navigate = useNavigate();
+    const[foodName, setFoodName] = useState("")
+    const[foodPrice, setPrice] = useState("")
+    const[ingreDients, setIngredients] = useState(" ")
+    const[foodPicture, setFoodPicture] = useState(" ")
+    const[cateGory, setCategory] = useState(" ")
 
-const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(foodName, foodPrice, ingreDients, foodPicture, cateGory)
-    fetch("/products", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name: foodName,
-            price: foodPrice,
-            ingredients: ingreDients,
-            picture: foodPicture,
-            category: cateGory
-        })
-    })
-    .then(res => res.json())
-    .then((food) => console.log(food))
-
-    setFoodName("")
-    setPrice("")
-    setIngredients("")
-    setFoodPicture("")
-    setCategory("")
-
-
-    fetch("/products/:id",{
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name: foodName,
-            price: foodPrice,
-            ingredients: ingreDients,
-            picture: foodPicture,
-            category: cateGory
-        })
+    console.log(user.user_type)
+    const token = localStorage.getItem('jwt')
+    const handleSubmit = (e) => {
+        console.log(user.user_type)
+        e.preventDefault();
+        if (user.user_type === 'chef') {
+            fetch('/products', {
+                method: "POST",
+                headers: {
+                    Authorization: "Bearer " + token,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    food_name: foodName,
+                    price: foodPrice,
+                    ingredient: ingreDients,
+                    picture: foodPicture,
+                    category: cateGory
+                })
+            })
+            .then(res => res.json())
+            .then((food) => console.log(food))
+            setFoodName("")
+            setPrice("")
+            setIngredients("")
+            setFoodPicture("")
+            setCategory("")
+            navigate('/home')
+        }
     }
-    )
-    console.log(foodName, foodPrice, ingreDients, foodPicture, cateGory)
- 
+    console.log(foods)  
 
-}
+//     const handleUpdateForm = (e) => {
+//         e.preventDefault();
+//         fetch("/products/:id", {
+//             method: "PATCH",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify({
+//                 name: foodName,
+//                 price: foodPrice,
+//                 ingredients: ingreDients,
+//                 picture: foodPicture,
+//                 category: cateGory
+//             })
+//         })
+//         .then(res => res.json())
+//     .then((food) => console.log(food))
+// }
+
 
     return (
     <div>
@@ -96,6 +105,8 @@ const handleSubmit = (e) => {
             <button className="btn btn-primary">Submit</button>
 
         </form>
+        {/* <button onClick={handleDelete} className="btn btn-primary">DELETE</button> */}
+
     </div>
     )
 }

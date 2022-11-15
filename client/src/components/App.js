@@ -6,38 +6,47 @@ import  Login  from './Login';
 import  { Logout }  from './Logout';
 import Home from './Home';
 import { Route, Routes} from 'react-router-dom';
-import NavList from './NavList';
+// import NavList from './NavList';
+import  Profile  from './Profile';
 
 
 function App() {
-  const [user, setUser] = useState(null)
-
+  const [user, setUser] = useState({});
+  const jwt_token = localStorage.getItem("jwt");
+  console.log(jwt_token);
   useEffect(() => {
-    fetch('/me')
-    .then(res => {
-      if (res.ok) {
-        res.json()
-        .then(user => 
-        setUser(user))
-      }
+    fetch('/me',{
+      method: 'GET',
+      headers: {
+        Authorization: "Bearer " + jwt_token,
+        'Content-Type': 'application/json'
+      },
     })
+      .then(res => res.json())
+      .then(user => setUser(user))
+
   }, [])
 
-  console.log(user)
+  console.log(user.user_type)
   return (
     <div className="App" >
-      <h4>Dark Kitchen</h4>
-      <NavList user={user} setUser={setUser}/> 
-      {user ?  <Login setUser={setUser} /> : <Signup setUser={setUser} />}
-      {user ? <Logout setUser={setUser} /> : <Login setUser={setUser} />}
+      {/* <h4>Dark Kitchen</h4>
+      <NavList user={user} setUser={setUser}/>  */}
+
+      {/* {user ?  <Login setUser={setUser} /> : <Signup setUser={setUser} />}
+      {user ? <Logout setUser={setUser} /> : <Login setUser={setUser} />}  */}
 
     <Routes>
-        <Route exact path="/"  element={<Home />} />
+        <Route exact path="/"  element={<Home user={user} />} />
+        <Route exact path="/home"  element={<Home />} />
+        <Route path="/login" element={<Login setUser={setUser} />} />
+        <Route path="/signup" element={<Signup setUser={setUser} />} />
+        <Route path="/logout" element={<Logout setUser={setUser} />} />
+        <Route path="/profile" element={<Profile user={user} />} /> 
+        {/* <Route path="/Profile" element={<Profile setUser={setUser} />} /> */}
+
     </Routes>
-
-
     </div>
   );
 }
-
-export default App
+export default App;

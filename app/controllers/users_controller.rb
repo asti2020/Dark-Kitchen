@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized, only: [:create, :profile]
 
     rescue_from ActiveRecord::RecordInvalid, with: :handle_invalid_record
 
@@ -14,6 +14,15 @@ class UsersController < ApplicationController
             render json: current_user, status: :accepted
         end
 
+        def profile
+            if current_user
+                render json: current_user, status: :ok
+                else
+                    puts("No user provided")
+                    render json: current_user, status: :not_found
+            end
+        end
+
 
 
 private
@@ -24,4 +33,4 @@ private
         def handle_invalid_record(invalid)
             render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
         end
-    end
+end

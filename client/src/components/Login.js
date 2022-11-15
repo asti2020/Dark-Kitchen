@@ -1,11 +1,13 @@
 import React from 'react'
 import {useState} from 'react'
+import { useNavigate } from "react-router-dom";
+
 
 function Login({setUser}) {
-
+    const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [errors, setErrors] = useState("");
+    // const [errors, setErrors] = useState("");
     const[formDisplay, setFormDisplay] = useState(true);
 
 
@@ -26,13 +28,13 @@ function Login({setUser}) {
             if (res.ok) {
                 res.json()
                 .then(user => {
-                    localStorage.setItem('jwt', user.jwt)
-                    setUser(user)
+                    localStorage.setItem("jwt", user.token);
+                    navigate('/profile')
                 })
                     }
         })
     }
-    console.log(errors)
+    // console.log(errors)
 
     const handleClickForm = (e) => {
         e.preventDefault();
