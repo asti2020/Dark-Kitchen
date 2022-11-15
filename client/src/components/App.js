@@ -29,7 +29,7 @@ function App() {
 
   console.log(user.user_type)
   return (
-    <div className="App" >
+    <>
     <Routes>
         {/* <Route exact path="/"  element={<Home user={user} />} /> */}
         {/* <Route exact path="/home"  element={<Home user={user}/>} /> */}
@@ -40,7 +40,7 @@ function App() {
         {/* <Route path="/Profile" element={<Profile setUser={setUser} />} /> */}
 
     </Routes>
-    </div>
+    </>
   );
 }
 export default App;

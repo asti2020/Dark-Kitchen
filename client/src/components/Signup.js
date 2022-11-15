@@ -43,16 +43,19 @@ const[formDisplay, setFormDisplay] = useState(true);
             }
 console.log(errors)
 
-            // const handleClickForm = (e) => {
-            //     e.preventDefault();
-            //     setFormDisplay(!formDisplay)
-            // }
+            const handleClickForm = (e) => {
+                e.preventDefault();
+                setFormDisplay(!formDisplay)
+            }
 
 
 
     return (
-        <div>
-            <h3>Signup</h3>
+        <>
+            <h3 onClick={handleClickForm}>Create an account</h3>
+
+            {formDisplay ? null : 
+                <div id='formDiv'>
                 <form onSubmit={handleSubmit}>
                     <div>
                             <input type= "text" 
@@ -96,6 +99,10 @@ console.log(errors)
                         <button type="submit">Signup</button>
                     </div>
                 </form>
+            </div>  
+            
+            }
+            
             
 
                 <div>
@@ -104,7 +111,7 @@ console.log(errors)
                     </ul>
                 </div>
 
-        </div>
+         </>  
     )
 }
 

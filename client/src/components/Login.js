@@ -38,17 +38,15 @@ function Login({setUser}) {
     }
     // console.log(errors)
 
-    const handleClickForm = (e) => {
-        e.preventDefault();
-        setFormDisplay(!formDisplay)
-    }
+    // const handleClickForm = (e) => {
+    //     e.preventDefault();
+    //     setFormDisplay(!formDisplay)
+    // }
 
     return (
-    <>
-    <Signup/>
-        <div>
-            <h3 onClick={handleClickForm}>Already have an account?</h3>
-            { formDisplay ? null :
+    <div  id='landingPageDiv'>
+        <>
+            <h3 id='homeH3'>Eat or Cook!</h3>
             <form onSubmit={handleSubmit}>
                 <div>
                     <input type= "text" 
@@ -66,9 +64,9 @@ function Login({setUser}) {
                 </div>
                 <input type="submit" value="Login" />
             </form>
-            }
-        </div>
-    </>
+        </>
+        <Signup/>
+    </div>
     )
 }
 

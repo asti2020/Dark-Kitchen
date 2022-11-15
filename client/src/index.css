@@ -1,12 +1,19 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 * {
   font-family: 'Baskervville', serif;
 }
+body {
+  margin: 0;
+}
+
+/**************************************   Sign up/ Login   **********************************/
+
+#homeH3 {
+  margin: 0;
+}
+
+#landingPageDiv {
+  background-color: red;
+}
+
+/**************************************   Sign up/ Login   **********************************/
+
