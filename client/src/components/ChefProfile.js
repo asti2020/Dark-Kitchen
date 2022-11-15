@@ -9,7 +9,7 @@ export const ChefProfile = ({user}) => {
     const navigate = useNavigate()
     console.log(user)
         let token = localStorage.getItem('jwt')
-    if (token === '' ){
+    if (token === null ){
             navigate('/login')
             console.log("no token found") 
             return null

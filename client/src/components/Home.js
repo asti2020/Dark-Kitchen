@@ -2,10 +2,9 @@ import React from 'react'
 import {FoodList} from './FoodList'
 import {useState, useEffect} from 'react'
 
-
 function Home({user}) {
     const [foods, setFoods] = useState([])
-    
+
     console.log(user)
         useEffect (() => {
             fetch("/products")
@@ -13,9 +12,18 @@ function Home({user}) {
                 .then(res => setFoods(res))
         }, [])
 
-        const newFood = (food) => {
-            setFoods([...foods, food])
+        const onDeleteProduct = (food) => {
+            const newFoods = foods.filter(f => f.id !== food.id)
+            setFoods(newFoods)
         }
+
+        const onUpdatedProduct = (food) => {
+            const newFoods = foods.map(f => f.id === food.id? food : f)
+            setFoods(newFoods)
+            console.log(newFoods)
+        }
+
+        
         console.log(foods)
             return ( 
             <>
@@ -25,7 +33,7 @@ function Home({user}) {
                     <p> Here you can find the best food in the world </p>
                 </div>
                 <div>
-                    <FoodList user={user} newFood={newFood} foods={foods}/>
+                    <FoodList user={user} onUpdatedProduct={onUpdatedProduct} onDeleteProduct={onDeleteProduct} foods={foods}/>
                     </div>
             </>
             )

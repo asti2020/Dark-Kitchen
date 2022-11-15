@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 import { useNavigate } from "react-router-dom";
+import { Updatebutton } from './Updatebutton';
 
 function FoodForm({ user }) {
     const navigate = useNavigate();
@@ -16,7 +17,7 @@ function FoodForm({ user }) {
         console.log(user.user_type)
         e.preventDefault();
         if (user.user_type === 'chef') {
-            fetch('/products', {
+            fetch('./products', {
                 method: "POST",
                 headers: {
                     Authorization: "Bearer " + token,
@@ -46,7 +47,7 @@ function FoodForm({ user }) {
         e.preventDefault();
         if (user.user_type === 'chef') {
 
-            fetch('/products', {
+            fetch('/products/:id', {
                 method: "PATCH",
                 headers: {
                     Authorization: "Bearer " + token,
@@ -60,6 +61,9 @@ function FoodForm({ user }) {
                     category: cateGory
                 })
             })
+            .then(res => res.json())
+            .then((food) => console.log(food))
+
         } else {
             return (
                 <div className="container">
@@ -72,9 +76,6 @@ function FoodForm({ user }) {
                 </div>
             );
     }}
-
-
-
     return (
     <div>
         <form onSubmit={handleSubmit} >
@@ -116,9 +117,9 @@ function FoodForm({ user }) {
                 />
             </div>
             <button className="btn btn-primary">Submit</button>
-            <button onClick={handleUpdateForm} className="btn btn-primary">Update</button>
-
         </form>
+
+        <Updatebutton onClick={handleUpdateForm} user={user} />
     </div>
     )
 }

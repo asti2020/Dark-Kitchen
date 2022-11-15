@@ -1,7 +1,7 @@
 import React from 'react'
 import {Delete} from './Delete'
 
-export const FoodCard = ({food, user}) => {
+export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct}) => {
     return (
         <div>
             
@@ -13,7 +13,7 @@ export const FoodCard = ({food, user}) => {
                     <p>$:{food.price}</p>
                     {user.user_type === 'chef' ? <div>
                     <button className="btn btn-primary">Edit</button> 
-                    <Delete food={food}/>
+                    <Delete onDeleteProduct={onDeleteProduct} user={user} food={food}/>
                     </div>
                     : 
                     <button className="btn btn-primary">Add to Cart</button>}

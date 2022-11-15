@@ -6,7 +6,7 @@ set -o errexit
 rm -rf public
 npm install --prefix client && npm run build --prefix client
 cp -a client/build/. public/
- public/index.html
+render :file => public/index.html
 # builds the back end code
 bundle install
 bundle exec rake db:migrate
