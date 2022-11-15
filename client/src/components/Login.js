@@ -45,7 +45,7 @@ function Login({setUser}) {
 
     return (
     <div  id='landingPageDiv'>
-        <>
+        <div id='formDiv'>
             <h3 id='homeH3'>Eat or Cook!</h3>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -64,8 +64,8 @@ function Login({setUser}) {
                 </div>
                 <input type="submit" value="Login" />
             </form>
-        </>
-        <Signup/>
+            <Signup/>
+        </div>
     </div>
     )
 }

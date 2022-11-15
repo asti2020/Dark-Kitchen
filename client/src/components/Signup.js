@@ -55,7 +55,7 @@ console.log(errors)
             <h3 onClick={handleClickForm}>Create an account</h3>
 
             {formDisplay ? null : 
-                <div id='formDiv'>
+                <>
                 <form onSubmit={handleSubmit}>
                     <div>
                             <input type= "text" 
@@ -99,7 +99,7 @@ console.log(errors)
                         <button type="submit">Signup</button>
                     </div>
                 </form>
-            </div>  
+            </>  
             
             }
             
