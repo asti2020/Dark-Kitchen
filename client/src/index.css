@@ -12,6 +12,10 @@
   height: 100vh;
 }
 
+* {
+  font-family: 'Baskervville', serif;
+}
+
 /*******************************************  SignUp/Login  ***************************************/
 .sandlContainer {
   text-align: -webkit-center;
@@ -66,7 +70,3 @@ p span {
 }
 
 /*******************************************  SignUp/Login  ***************************************/
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
