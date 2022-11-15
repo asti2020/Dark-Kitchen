@@ -2,6 +2,8 @@ import React from 'react'
 import {useState} from 'react'
 import { useNavigate } from "react-router-dom";
 
+import Signup from './Signup';
+
 
 function Login({setUser}) {
     const navigate = useNavigate();
@@ -42,8 +44,10 @@ function Login({setUser}) {
     }
 
     return (
+    <>
+    <Signup/>
         <div>
-            <h3 onClick={handleClickForm}>Login</h3>
+            <h3 onClick={handleClickForm}>Already have an account?</h3>
             { formDisplay ? null :
             <form onSubmit={handleSubmit}>
                 <div>
@@ -64,6 +68,7 @@ function Login({setUser}) {
             </form>
             }
         </div>
+    </>
     )
 }
 

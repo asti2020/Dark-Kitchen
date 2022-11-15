@@ -31,9 +31,9 @@ function App() {
   return (
     <div className="App" >
     <Routes>
-        <Route exact path="/"  element={<Home user={user} />} />
-        <Route exact path="/home"  element={<Home user={user}/>} />
-        <Route path="/login" element={<Login setUser={setUser} />} />
+        {/* <Route exact path="/"  element={<Home user={user} />} /> */}
+        {/* <Route exact path="/home"  element={<Home user={user}/>} /> */}
+        <Route path="/" element={<Login setUser={setUser} />} />
         <Route path="/signup" element={<Signup setUser={setUser} />} />
         <Route path="/logout" element={<Logout setUser={setUser} />} />
         <Route path="/profile" element={<Profile user={user} />} /> 
