@@ -10,7 +10,7 @@ function Login({setUser}) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     // const [errors, setErrors] = useState("");
-    const[formDisplay, setFormDisplay] = useState(true);
+    //const[formDisplay, setFormDisplay] = useState(true);
 
 
     const handleSubmit = (e) => {

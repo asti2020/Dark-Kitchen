@@ -1,12 +1,12 @@
 import React from 'react'
 import {ChefProfile} from './ChefProfile'
-import Login from './Login'
+//import Login from './Login'
 //import { Logout } from './Logout'
-import { useState, useEffect } from 'react';
+//import { useState, useEffect } from 'react';
 
 function Profile({user}) {
-    const [profileChef, setUserChef] = useState({})
-    const [profileOrder, setProfileOrder] = useState({})
+    //const [profileChef, setUserChef] = useState({})
+    //const [profileOrder, setProfileOrder] = useState({})
 
     // if(user === 'undefined' || user === null) {
     //     user = localStorage.getItem('jwt');       

@@ -32,7 +32,7 @@ function App() {
     <>
     <Routes>
         {/* <Route exact path="/"  element={<Home user={user} />} /> */}
-        {/* <Route exact path="/home"  element={<Home user={user}/>} /> */}
+        <Route exact path="/home"  element={<Home user={user}/>} />
         <Route path="/" element={<Login setUser={setUser} />} />
         <Route path="/signup" element={<Signup setUser={setUser} />} />
         <Route path="/logout" element={<Logout setUser={setUser} />} />

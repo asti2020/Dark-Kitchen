@@ -112,7 +112,7 @@ function FoodForm({ user }) {
                 />
             </div>
 
-            <button  className="loginBtn">Submit</button>
+            <button style={{marginRight: '10px'}}className="loginBtn">Submit</button>
             <button onClick={handleUpdateForm} className="loginBtn">Update</button>
 
         </form>

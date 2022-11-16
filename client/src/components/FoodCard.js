@@ -11,10 +11,10 @@ export const FoodCard = ({food, user}) => {
                     <p>Ingre:{food.ingredient}</p>
                     <p>$:{food.price}</p>
                     {user.user_type === 'chef' ? <div>
-                    <button className="btn btn-primary">Edit</button> 
+                    <button className="btn btn-primary">Edit</button>
                     <Delete food={food}/>
                     </div>
-                    : 
+                    :
                     <button className="btn btn-primary">Add to Cart</button>}
                 </div>
             </div>

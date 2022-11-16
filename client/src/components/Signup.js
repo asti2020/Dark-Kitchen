@@ -41,7 +41,8 @@ const[formDisplay, setFormDisplay] = useState(true);
                     }     
                 })
             }
-console.log(errors)
+            
+//console.log(errors)
 
             const handleClickForm = (e) => {
                 e.preventDefault();
