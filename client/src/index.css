@@ -116,11 +116,12 @@ body {
 #profilePageDiv {
   height: 100vh;
   background-color: var(--lightGrey);
+  column-count: 3;
+
 }
-#leftColumn {
+/* #leftColumn {
   width: 25%;
   height: 100vh;
-  display: inline-block;
 }
 #middleColumn {
   width: 25%;
@@ -131,7 +132,7 @@ body {
   width: 25%;
   height: 100vh;
   display: inline-block;
-}
+} */
 .leftImages {
   width: 90%;
 }

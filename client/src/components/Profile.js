@@ -21,9 +21,7 @@ function Profile({user}) {
 
 
             <div id='leftColumn'>
-                {/* <img className='leftImages' src='https://loveincorporated.blob.core.windows.net/contentimages/gallery/d9e900e4-212e-4c3d-96d5-cb14a023c659-worlds-most-delicious-dishes.jpg' alt='food dish'></img>
-                <h3>Title</h3>
-                <p>Description</p> */}
+
             </div>
 
             <div id='middleColumn'>
