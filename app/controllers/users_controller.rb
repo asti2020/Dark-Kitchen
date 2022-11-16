@@ -23,6 +23,15 @@ class UsersController < ApplicationController
             end
         end
 
+        def userProduct
+            if current_user
+                user = User.find(params[:id])
+                products = user.products
+                render json: products, status: :ok
+            end
+        end
+
+
 
 
 private

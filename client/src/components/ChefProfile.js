@@ -1,11 +1,10 @@
 import React from 'react'
 import FoodForm from './FoodForm'
-// import {useNavigate} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import { FoodList } from './FoodList';
 
-
 export const ChefProfile = ({user}) => {
+    let foods = user.products
     const navigate = useNavigate()
     console.log(user)
         let token = localStorage.getItem('jwt')
@@ -18,6 +17,7 @@ export const ChefProfile = ({user}) => {
         return (
             <div>
                 <h4>Chef Profile</h4>
+                <FoodList foods={foods} user={user} />
                 <FoodForm user={user} />
             </div>
         )

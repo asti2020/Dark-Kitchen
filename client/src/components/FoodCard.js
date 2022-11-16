@@ -2,6 +2,7 @@ import React from 'react'
 import {Delete} from './Delete'
 
 export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct}) => {
+
     return (
         <div>
             

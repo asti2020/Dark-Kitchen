@@ -18,6 +18,12 @@ class ProductsController < ApplicationController
         end
     end
 
+    def show
+        product = Product.find(params[:id])
+        render json: product, status: :found
+    end
+    
+
     def update
         if current_user.user_type == "chef"
             product = Product.find(params[:id])

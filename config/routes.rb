@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
-  resources :products, only: [ :index, :create, :update, :destroy ]
+  resources :products, only: [ :index, :create, :update, :destroy, :show ]
   # get '/products', to: 'products#index'
+  get '/users/:id/products', to: 'users#userProduct'
   resources :users, only: [:create]
   get '/profile', to: "users#profile"
   get '/me', to: "users#me"
