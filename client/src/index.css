@@ -106,5 +106,33 @@ body {
   padding: 5px;
   text-align: center;
 }
+#createAnAccount {
+  cursor: pointer;
+}
 /**************************************   Sign up/ Login   **********************************/
 
+/**************************************   Profile Page     **********************************/
+
+#profilePageDiv {
+  height: 100vh;
+  background-color: var(--lightGrey);
+}
+#leftColumn {
+  width: 25%;
+  height: 100vh;
+  display: inline-block;
+}
+#middleColumn {
+  width: 25%;
+  height: 100vh;
+  display: inline-block;
+}
+#rightColumn {
+  width: 25%;
+  height: 100vh;
+  display: inline-block;
+}
+.leftImages {
+  width: 90%;
+}
+/**************************************   Profile Page     **********************************/

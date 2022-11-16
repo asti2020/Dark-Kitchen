@@ -52,7 +52,7 @@ console.log(errors)
 
     return (
         <>
-            <h3 onClick={handleClickForm}>Create an account</h3>
+            <h3 id='createAnAccount' onClick={handleClickForm}>Create an account</h3>
 
             {formDisplay ? null : 
                 <>
