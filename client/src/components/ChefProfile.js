@@ -3,6 +3,8 @@ import FoodForm from './FoodForm'
 // import {useNavigate} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import { FoodList } from './FoodList';
+import {Logout} from './Logout';
+import { NavList } from './NavList';
 
 
 export const ChefProfile = ({user}) => {
@@ -11,15 +13,21 @@ export const ChefProfile = ({user}) => {
         let token = localStorage.getItem('jwt')
     if (token === '' ){
             navigate('/login')
-            console.log("no token found") 
+            console.log("no token found")
             return null
     } else {
         console.log("token found")
         return (
-            <div>
-                <h4>Chef Profile</h4>
-                <FoodForm user={user} />
-            </div>
+            <>
+                {/* <NavList /> */}
+                <div id='chefProfileDiv'>
+                    <div id='chefProfileForm'>
+                        <h3 id='chefH3'>Hello Chef, add some more dishes!</h3>
+                        <FoodForm user={user} />
+                        <Logout />
+                    </div>
+                </div>
+            </>
         )
     }
 }

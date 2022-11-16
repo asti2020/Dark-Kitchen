@@ -51,7 +51,7 @@ console.log(errors)
 
 
     return (
-        <>
+        <div id='fromSignup'>
             <h3 id='createAnAccount' onClick={handleClickForm}>Create an account</h3>
 
             {formDisplay ? null : 
@@ -121,7 +121,7 @@ console.log(errors)
                     </ul>
                 </div>
 
-         </>  
+         </div>  
     )
 }
 

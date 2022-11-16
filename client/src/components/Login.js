@@ -49,16 +49,16 @@ function Login({setUser}) {
             <h1 id='homeH3'>Eat or Cook!</h1>
             <form onSubmit={handleSubmit}>
                 <div className='loginInputDiv'>
-                    <input className='loginInput' type= "text" 
-                    name="username" 
-                    placeholder="Username" 
+                    <input className='loginInput' type= "text"
+                    name="username"
+                    placeholder="Username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)} />
                 </div>
                 <div className='loginInputDiv'>
-                    <input className='loginInput' type= "password" 
-                    name="password" 
-                    placeholder="Password" 
+                    <input className='loginInput' type= "password"
+                    name="password"
+                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)} />
                 </div>

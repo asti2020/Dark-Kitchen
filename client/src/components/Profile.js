@@ -1,7 +1,7 @@
 import React from 'react'
 import {ChefProfile} from './ChefProfile'
 import Login from './Login'
-import { Logout } from './Logout'
+//import { Logout } from './Logout'
 import { useState, useEffect } from 'react';
 
 function Profile({user}) {
@@ -12,15 +12,14 @@ function Profile({user}) {
     //     user = localStorage.getItem('jwt');       
     // }
    if (user.user_type === 'chef') {
-        return <div> <ChefProfile  user={user}/>
-        <Logout />
-         </div>
+        return <> <ChefProfile  user={user}/>
+         </>
     } else {
     return (
         <div id='profilePageDiv'>
 
 
-            <div id='leftColumn'>
+            <div id='leftItem'>
 
             </div>
 

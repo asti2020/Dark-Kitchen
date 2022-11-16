@@ -18,7 +18,7 @@ function Home({user}) {
         console.log(foods)
             return ( 
             <>
-                <div>
+                <div id='InsideFromHome'>
                     <h1>Logo</h1>
                     <p>Welcome to the Dark Kitchen!</p>
                     <p> Here you can find the best food in the world </p>

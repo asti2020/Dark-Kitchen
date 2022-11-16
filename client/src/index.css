@@ -91,9 +91,9 @@ body {
   margin: 20px auto;
 } 
 
-#homePTage span { 
-   background: var(--lightGrey); 
-   padding:0 10px; 
+#homePTage span {
+  background: var(--lightGrey);
+  padding:0 10px;
 }
 .signInInputDiv {
   margin: 10px;
@@ -111,29 +111,40 @@ body {
 }
 /**************************************   Sign up/ Login   **********************************/
 
-/**************************************   Profile Page     **********************************/
+/**************************************  Chef Profile Page     **********************************/
 
-#profilePageDiv {
-  height: 100vh;
+#chefProfileDiv {
   background-color: var(--lightGrey);
-  column-count: 3;
+  height: 100vh;
+}
+#chefH3 {
+  margin: 0;
+}
 
+#chefProfileForm {
+  background-color: var(--lightGrey);
+  height: 450px;
+  width: 35%;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
 }
-/* #leftColumn {
-  width: 25%;
-  height: 100vh;
+.foodFormInputDiv {
+  margin: 10px;
 }
-#middleColumn {
-  width: 25%;
-  height: 100vh;
-  display: inline-block;
+.foodInput {
+  border-radius: 10px;
+  border: none;
+  width: 50%;
+  height: 28px;
+  padding: 10px;
+  text-align: center;
 }
-#rightColumn {
-  width: 25%;
-  height: 100vh;
-  display: inline-block;
-} */
-.leftImages {
-  width: 90%;
-}
-/**************************************   Profile Page     **********************************/
+
+/**************************************  Chef Profile Page     **********************************/
+
+

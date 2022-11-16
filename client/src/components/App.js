@@ -36,7 +36,7 @@ function App() {
         <Route path="/" element={<Login setUser={setUser} />} />
         <Route path="/signup" element={<Signup setUser={setUser} />} />
         <Route path="/logout" element={<Logout setUser={setUser} />} />
-        <Route path="/profile" element={<Profile user={user} />} /> 
+        <Route path="/profile" element={<Profile user={user} />} />
         {/* <Route path="/Profile" element={<Profile setUser={setUser} />} /> */}
 
     </Routes>

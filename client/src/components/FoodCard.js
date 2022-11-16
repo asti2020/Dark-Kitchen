@@ -3,8 +3,7 @@ import {Delete} from './Delete'
 
 export const FoodCard = ({food, user}) => {
     return (
-        <div>
-            
+        <>
             <div className="food-card">
                 <div>
                     <img className='foodImage' src={food.picture} alt={food.food_name} />
@@ -19,7 +18,7 @@ export const FoodCard = ({food, user}) => {
                     <button className="btn btn-primary">Add to Cart</button>}
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

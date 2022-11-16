@@ -15,8 +15,8 @@ export const Delete = () => {
             .then((food) => console.log(food))
     }
   return (
-    <div>
+    <>
         <button onClick={handleDelete} className="btn btn-primary">DELETE</button>
-    </div>
+    </>
   )
 }
