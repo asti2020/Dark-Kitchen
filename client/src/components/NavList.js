@@ -1,52 +1,36 @@
 import React from 'react'
-// import {useState} from 'react'
+import { Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom'
+import { BsCart3 } from "react-icons/bs"
 
 
-
-function NavList() {
-  let activeStyle = {
-      textDecoration: "none",
-    };
-  let activeClassName = "nav-link-active";
+function NavList({count}) {
   return (
-      <nav>
-        <ul>
-          <li>
-            <NavLink
-              to="Home"
-              style={({ isActive }) =>
-                isActive ? activeStyle : undefined
-              }
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="Profile"
-              className={({ isActive }) =>
-                isActive ? activeClassName : undefined
-              }
-            >
-              Profile
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="Cart">
-              {({ isActive }) => (
-                <span
-                  className={
-                    isActive ? activeClassName : undefined
-                  }
-                >
-                  Cart
-                </span>
-              )}
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
+    <>
+      <div className='navListhead'>
+        <NavLink to="/"><div className="logo"> <img src="" alt="logo" /></div></NavLink>
+              <nav>
+                <ul className='nabBar'>
+                    <li>
+                      <NavLink to="Home" >
+                        <Button> Home </Button>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="Profile" >
+                        <Button>Profile</Button>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="Cart">
+                        <Button>{count}<BsCart3/></Button>
+                      </NavLink>
+                    </li>
+                </ul>
+              </nav>
+        </div>
+
+      </>
     );
 }
 

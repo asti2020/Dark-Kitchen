@@ -9,6 +9,8 @@ import { Route, Routes} from 'react-router-dom';
 // import NavList from './NavList';
 import  Profile  from './Profile';
 import {useNavigate} from 'react-router-dom'
+import NavList from './NavList';
+import Cart from './Cart';
 
 
 function App() {
@@ -29,12 +31,22 @@ function App() {
 
     }, [ jwt_token])
 
+const[count, setCount] = useState(0)
+
+const handleCount = () => {
+  setCount(count + 1)
+}
+
     console.log(user.user_type)
     return (
       <div className="App" >
+        <div className='myNav'>
+        <NavList count={count}/>
+        </div>
       <Routes>
           <Route exact path="/"  element={<Home user={user} />} />
-          <Route exact path="/home"  element={<Home user={user}/>} />
+          <Route exact path="/home"  element={<Home onClick={handleCount} user={user}/>} />
+          <Route exact path="/cart"  element={<Cart user={user}/>} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/signup" element={<Signup setUser={setUser} />} />
           <Route path="/logout" element={<Logout setUser={setUser} />} />

@@ -20,13 +20,6 @@ class UsersController < ApplicationController
                     render json: current_user, status: :not_found
             end
         end
-        # def userProduct
-        #     if current_user
-        #         user = User.find(params[:id])
-        #         products = user.products
-        #         render json: products, status: :ok
-        #     end
-        # end
 
 private
         def user_params

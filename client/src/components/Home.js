@@ -2,7 +2,7 @@ import React from 'react'
 import {FoodList} from './FoodList'
 import {useState, useEffect} from 'react'
 
-function Home({user}) {
+function Home({user, onClick}) {
     const [foods, setFoods] = useState([])
 
     console.log(user)
@@ -33,7 +33,7 @@ function Home({user}) {
                     <p> Here you can find the best food in the world </p>
                 </div>
                 <div>
-                    <FoodList user={user} onUpdatedProduct={onUpdatedProduct} onDeleteProduct={onDeleteProduct} foods={foods}/>
+                    <FoodList onClick={onClick} user={user} onUpdatedProduct={onUpdatedProduct} onDeleteProduct={onDeleteProduct} foods={foods}/>
                     </div>
             </>
             )

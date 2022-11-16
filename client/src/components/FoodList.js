@@ -1,15 +1,15 @@
 import React from 'react'
 import { FoodCard } from './FoodCard'
 
-export const FoodList = ({foods,onDeleteProduct, onUpdatedProduct, newFood, user}) => {
+export const FoodList = ({foods,onDeleteProduct, onUpdatedProduct, onClick, user}) => {
     return (
         <div>
 
-                <ul>
+                <ul className='foodListing'>
                 {
                     foods.map
                     (food => {
-                        return <FoodCard onUpdatedProduct={onUpdatedProduct} onDeleteProduct={onDeleteProduct} key={food.id} food={food} user={user}/>
+                        return <FoodCard onClick={onClick} onUpdatedProduct={onUpdatedProduct} onDeleteProduct={onDeleteProduct} key={food.id} food={food} user={user}/>
                     })
                 }
                 </ul>

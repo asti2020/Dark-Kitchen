@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/profile', to: "users#profile"
   get '/me', to: "users#me"
   post '/auth/login', to: "auths#login"
+  post 'products/add_to_cart/:id', to: 'products#add_to_cart'
+  destroy 'products/remove_from_cart/:id', to: 'products#remove_from_cart'
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end
 

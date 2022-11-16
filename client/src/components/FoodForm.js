@@ -78,8 +78,9 @@ function FoodForm({ user }) {
     }}
     return (
     <div>
-        <form onSubmit={handleSubmit} >
+        <form className='form' onSubmit={handleSubmit} >
             <div className="form-group">
+                <label>Food Name</label>
                 <input 
                     type="text" 
                     className="form-control" 
@@ -87,6 +88,7 @@ function FoodForm({ user }) {
                     value={foodName}
                     onChange={e => setFoodName(e.target.value)} 
                 />
+                <label>Price</label>
                 <input  
                     type="text" 
                     className="form-control" 
@@ -94,6 +96,7 @@ function FoodForm({ user }) {
                     value={foodPrice}
                     onChange={e => setPrice(e.target.value)}
                 />
+                <label>Ingredients</label>
                 <input 
                     type="text" 
                     className="form-control" 
@@ -101,6 +104,7 @@ function FoodForm({ user }) {
                     value={ingreDients}
                     onChange={e => setIngredients(e.target.value)}
                 />
+                <label>Picture</label>
                 <input 
                     type="text" 
                     className="form-control" 
@@ -108,6 +112,7 @@ function FoodForm({ user }) {
                     value={foodPicture}
                     onChange={e => setFoodPicture(e.target.value)}
                 />
+                <label>Category</label>
                 <input 
                     type="text" 
                     className="form-control" 

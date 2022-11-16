@@ -2,8 +2,8 @@
   text-align: center;
 }
 .food-card{
-  width: 50%;
-  height: 50%;
+  width: 300px;
+  height: 350px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -14,8 +14,50 @@
   justify-content: center;
   align-items: center;
 }
-
-.foodImage{
-  width: 100px;
-  height: 100px;
+.food-card img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.form{
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.foodListing{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo{
+  color: #fff;
+  align-items: center;
+}
+.navListhead{
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nabBar{
+  display: flex;
+  justify-content: right;
+  text-decoration: none;
+  align-items: center;
+}
+li{
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
 }

@@ -1,13 +1,33 @@
 import React from 'react'
+import { Card } from 'react-bootstrap'
 import {Delete} from './Delete'
 
-export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct}) => {
+export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick}) => {
+
+    // const onAddToCart = () => {
+    //     onUpdatedProduct(food.id)
+    //     onClick()
+
+    // }
+            // const onRemoveFromCart = () => {
+            //     onDeleteProduct(food.id)
+            //     onClick()
+
+            // }
+
+            // const onClick = () =>{
+            //     onUpdatedProduct(food.id)
+            //     onClick()
+
+            // }
+
+
 
     return (
         <div>
             
             <div className="food-card">
-                <div>
+                <Card>
                     <img className='foodImage' src={food.picture} alt={food.food_name} />
                     <h3>{food.food_name}</h3>
                     <p>Ingre:{food.ingredient}</p>
@@ -17,8 +37,8 @@ export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct}) => {
                     <Delete onDeleteProduct={onDeleteProduct} user={user} food={food}/>
                     </div>
                     : 
-                    <button className="btn btn-primary">Add to Cart</button>}
-                </div>
+                    <button onClick={onClick} className="btn btn-primary">Add to Cart</button>}
+                </Card>
             </div>
         </div>
     )
