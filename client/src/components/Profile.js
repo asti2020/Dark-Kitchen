@@ -6,12 +6,13 @@ import { Logout } from './Logout'
 import {useNavigate} from 'react-router-dom'
 // import { useState, useEffect } from 'react';
 
-function Profile({user}) {
+function Profile({user, newFood}) {
     const navigate = useNavigate()
+
     if (user.user_type ==='chef') {
         return(
-            <div> <ChefProfile  user={user}/>
-                <Logout />
+            <div> <ChefProfile newFood={newFood}  user={user}/>
+            <Logout />
             </div> )
     } else if (user.user_type === 'order') {
         return (
@@ -25,8 +26,7 @@ function Profile({user}) {
     } else {
         return (
             <div>
-                
-                <Login/>
+                <Login />
             </div>
         )
 

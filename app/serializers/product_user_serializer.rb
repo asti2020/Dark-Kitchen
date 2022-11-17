@@ -1,5 +1,6 @@
 class ProductUserSerializer < ActiveModel::Serializer
   attributes :id, :full_name
-  has_one :product
+  # belongs_to :product
+  # belongs_to :user
 
 end

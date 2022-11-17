@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :cart_items
+  resources :orders
+  resources :order_states, only: [:index]
+  resources :carts, only: [:index, :create, :update, :destroy]
   resources :products, only: [ :index, :create, :update, :destroy, :show ]
   # get '/products', to: 'products#index'
   get '/users/:id/products', to: 'users#userProduct'
@@ -8,7 +12,7 @@ Rails.application.routes.draw do
   get '/me', to: "users#me"
   post '/auth/login', to: "auths#login"
   post 'products/add_to_cart/:id', to: 'products#add_to_cart'
-  destroy 'products/remove_from_cart/:id', to: 'products#remove_from_cart'
+  # destroy 'products/remove_from_cart/:id', to: 'products#remove_from_cart'
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end
 

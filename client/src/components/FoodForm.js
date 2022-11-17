@@ -3,7 +3,7 @@ import {useState} from 'react'
 import { useNavigate } from "react-router-dom";
 import { Updatebutton } from './Updatebutton';
 
-function FoodForm({ user }) {
+function FoodForm({ user, newFood }) {
     const navigate = useNavigate();
     const[foodName, setFoodName] = useState("")
     const[foodPrice, setPrice] = useState("")
@@ -32,7 +32,10 @@ function FoodForm({ user }) {
                 })
             })
             .then(res => res.json())
-            .then((food) => console.log(food))
+            .then((food) => {
+                console.log(food)
+                newFood(food)
+            })
             setFoodName("")
             setPrice("")
             setIngredients("")

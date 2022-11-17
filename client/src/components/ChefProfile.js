@@ -2,8 +2,9 @@ import React from 'react'
 import FoodForm from './FoodForm'
 import { useNavigate } from 'react-router-dom';
 import { FoodList } from './FoodList';
+import EditFoodForm from './EditFoodForm';
 
-export const ChefProfile = ({user}) => {
+export const ChefProfile = ({user, newFood}) => {
     let foods = user.products
     const navigate = useNavigate()
     console.log(user)
@@ -18,7 +19,8 @@ export const ChefProfile = ({user}) => {
             <div>
                 <h4>Chef Profile</h4>
                 <FoodList foods={foods} user={user} />
-                <FoodForm user={user} />
+                <FoodForm newFood={newFood} user={user} />
+                <EditFoodForm user={user}/>
             </div>
         )
     }

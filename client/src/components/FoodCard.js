@@ -1,8 +1,10 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import {Delete} from './Delete'
+import { useNavigate } from 'react-router-dom'
 
 export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick}) => {
+    const navigate = useNavigate()
 
     // const onAddToCart = () => {
     //     onUpdatedProduct(food.id)
@@ -15,11 +17,10 @@ export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick
 
             // }
 
-            // const onClick = () =>{
-            //     onUpdatedProduct(food.id)
-            //     onClick()
+            const onClickEdit = () =>{
+                navigate('/edit')
 
-            // }
+            }
 
 
 
@@ -33,7 +34,7 @@ export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick
                     <p>Ingre:{food.ingredient}</p>
                     <p>$:{food.price}</p>
                     {user.user_type === 'chef' ? <div>
-                    <button className="btn btn-primary">Edit</button> 
+                    <button onClick={onClickEdit} className="btn btn-primary">Edit</button> 
                     <Delete onDeleteProduct={onDeleteProduct} user={user} food={food}/>
                     </div>
                     : 

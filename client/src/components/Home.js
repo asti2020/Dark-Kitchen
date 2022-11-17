@@ -12,16 +12,22 @@ function Home({user, onClick}) {
                 .then(res => setFoods(res))
         }, [])
 
-        const onDeleteProduct = (food) => {
-            const newFoods = foods.filter(f => f.id !== food.id)
-            setFoods(newFoods)
-        }
+        // const onDeleteProduct = (food) => {
+        //     const newFoods = foods.filter(f => f.id !== food.id)
+        //     setFoods(newFoods)
+        // }
 
-        const onUpdatedProduct = (food) => {
-            const newFoods = foods.map(f => f.id === food.id? food : f)
-            setFoods(newFoods)
-            console.log(newFoods)
-        }
+        // const onUpdatedProduct = (food) => {
+        //     const newFoods = foods.map(f => f.id === food.id? food : f)
+        //     setFoods(newFoods)
+        //     console.log(newFoods)
+        // }
+
+        // const newFood =(food) => {
+        //     const newFoods = [...foods, food]
+        //     setFoods(newFoods)
+
+        // }
 
         
         console.log(foods)
@@ -33,7 +39,7 @@ function Home({user, onClick}) {
                     <p> Here you can find the best food in the world </p>
                 </div>
                 <div>
-                    <FoodList onClick={onClick} user={user} onUpdatedProduct={onUpdatedProduct} onDeleteProduct={onDeleteProduct} foods={foods}/>
+                    <FoodList onClick={onClick} user={user} foods={foods}/>
                     </div>
             </>
             )
