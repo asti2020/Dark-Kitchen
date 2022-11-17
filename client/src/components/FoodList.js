@@ -1,30 +1,26 @@
 import React from 'react'
-import { FoodCard } from './FoodCard'
 import Search from "./Search";
-import { useState } from "react";
-import { Home } from './Home';
-// import { useEffect } from "react";
+import { FoodCard } from './FoodCard'
+// import { Home } from './Home';
+import { useState, useEffect } from "react";
 
-const [search, setSearch] = useState("")
+export const FoodList = ({foods, newFood, user}) => {
+    const [search, setSearch] = useState("")
+    const [product, setProduct] = useState([])
 
-// useEffect(() => {
-//     fetch ("http://localhost:3000/products")
-//     .then((res) => res.json())
-//     .then((foods) => {
-//         console.log(foods, "fetching foods from the FoodList!");
-//         setProducts(foods);
-//     });
-//     }, []);
+useEffect(() => {
+    fetch ("http://localhost:3000/products")
+    .then((res) => res.json())
+    .then((product) => {
+        // console.log(product, "fetching foods from the FoodList!");
+        setProduct(product);
+    });
+    }, []);
 
 const searchedFoods = foods.filter((food) => {
     return food.name.toLowerCase().includes(search.toLowerCase());
   });
 
-
-
- 
-
-export const FoodList = ({foods, newFood, user}) => {
     return (
                 <>{
                     foods.map
