@@ -59,19 +59,18 @@ console.log(user)
 
     return (
       <div className="App" >
-        <div className='myNav'>
+        {/* <div className='myNav'>
         <NavList count={count}/>
-        </div>
+        </div> */}
       <Routes>
           <Route path="/*" element={<NotFound />} />
-          <Route exact path="/"  element={<Home foods={foods} user={user} />} />
+          <Route exact path="/home"  element={<Home foods={foods} user={user} />} />
           <Route exact path="/home"  element={<Home onClick={handleCount} user={user}/>} />
           <Route exact path="/cart"  element={<Cart user={user}/>} />
-          <Route path="/login" element={<Login setUser={setUser} />} />
+          <Route path="/" element={<Login setUser={setUser} />} />
           <Route path="/signup" element={<Signup setUser={setUser} />} />
           <Route path="/logout" element={<Logout setUser={setUser} />} />
           {user ? <Route path="/profile" element={<Profile newFood={newFood} user={user} />} /> : navigate('/login')}
-
       </Routes>
       </div>
     );

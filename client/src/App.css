@@ -1,63 +1,108 @@
-.App {
+* {
+  font-family: 'Baskervville', serif;
+}
+body {
+  margin: 0;
+}
+:root {
+  --red: #AC131D;
+  --lightGrey: #EBE9EC;
+  --white: #F7F7F7;
+  --grey: #7A7977;
+  --darkGrey: #3F3F41;
+  --darkBrown: #3B2514;
+}
+/**************************************   Sign up/ Login   **********************************/
+#homeH3 {
+  margin: 0;
+}
+#landingPageDiv {
+  height: 100vh;
+  background-image: url(./images/BGPhase4.jpg);
+  background-size: cover;
+}
+#formDiv {
+  background-color: var(--lightGrey);
+  display: inline-block;
+  width: 35%;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 600px;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  border-radius: 5%;
+  box-shadow: 5px 4px 20px var(--darkGrey);
+}
+.loginInputDiv {
+  margin: 10px;
+}
+.loginInput {
+  border-radius: 10px;
+  border: none;
+  width: 50%;
+  height: 28px;
+  padding: 10px;
   text-align: center;
 }
-.food-card{
-  width: 300px;
-  height: 350px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.food-card img{
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.form{
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-img{
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.foodListing{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.logo{
-  color: #fff;
-  align-items: center;
-}
-.navListhead{
-  background-color: #000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nabBar{
-  display: flex;
-  justify-content: right;
+.loginBtn {
+  position: relative;
+  background-color: var(--white);
+  border: none;
+  font-size: 1.2rem;
+  color: var(--darkGrey);
+  padding: 5px;
+  width: 100px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
   text-decoration: none;
-  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 10px;
 }
-li{
-  list-style: none;
+.loginBtn:after {
+  content: "";
+  background: var(--red);
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+.loginBtn:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+#homePTage {
+  width: 50%;
+  text-align: center;
+  border-bottom: 1px solid var(--white);
+  line-height: 0.1em;
+  margin: 20px auto;
+}
+#homePTage span {
+  background: var(--lightGrey);
+  padding:0 10px;
+}
+.signInInputDiv {
   margin: 10px;
-  padding: 10px;
-  text-decoration: none;
-  color: #000;
 }
+.signInInput {
+  border-radius: 10px;
+  border: none;
+  width: 50%;
+  height: 25px;
+  padding: 5px;
+  text-align: center;
+}
+#createAnAccount {
+  cursor: pointer;
+}
+/**************************************   Sign up/ Login   **********************************/
