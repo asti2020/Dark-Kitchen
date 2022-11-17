@@ -21,7 +21,6 @@ function Home({user}) {
             <>
             <NavList />
                 <div id='InsideFromHome'>
-                    <h2 id='homeH2'>Logo</h2>
                     <p>Welcome to the Dark Kitchen!</p>
                     <p> Here you can find the best food in the world </p>
                     <div id='gridContainer'>

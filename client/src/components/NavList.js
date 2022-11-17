@@ -1,6 +1,7 @@
 import React from 'react'
 //import {useState} from 'react'
 import { NavLink } from 'react-router-dom'
+import logo from '../images/logo.png'
 
 
 
@@ -11,6 +12,9 @@ function NavList() {
   return (
     <nav id='navBar'>
       <ul>
+        <li>
+          <img id='logo' src={logo} alt='logo' />
+        </li>
         <li>
           <NavLink to="/profile">
             Add more food dishes
