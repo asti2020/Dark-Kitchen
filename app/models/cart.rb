@@ -12,3 +12,6 @@ class Cart < ApplicationRecord
   end
 end
 
+
+# Used to store the products that the user wants to purchase. 
+# Stores LineItems before proceeding to checkout; a new instance must be created each time a new session occurs to keep track of added products throughout the app.
