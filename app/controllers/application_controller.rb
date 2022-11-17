@@ -29,6 +29,17 @@ class ApplicationController < ActionController::API
           end
       end
 
+      def current_cart
+        if decoded_token
+          cart_id = decoded_token[0]["cart_id"]
+          cart = Cart.find_by(id: cart_id)
+          # render json: cart, status: 200
+          render json: cart
+        end
+      end
+      
+
+
       def authorized
           unless !!current_user
               render json: {message: "Please log in"}, status: :unauthorized

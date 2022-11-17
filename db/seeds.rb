@@ -9,7 +9,7 @@ user3 =User.create(full_name: "mariya", username: "admin", email: "mariya@gmail.
 product1=Product.create(food_name:"Rice", price:5.99, ingredient:"Rice is a staple food in many cultures, especially in Asia.", category:"Break-Fast", user_id:1, picture:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUu_EhJWLEUW3U0bhPwHPHn8dibqAPCQaWSw&usqp=CAU")
 
 
-cart1=Cart.create(user_id:user2.id)
+cart1=Cart.create(user_id:user2.id, isActive:true)
 
 order1=Order.create(user_id:user2.id, order_status:"pending", address:"1234", phone:"1234567890", avilable:true)
 order2=Order.create(user_id:user3.id, order_status:"pending", address:"1234", phone:"1234567890", avilable:true)

@@ -3,11 +3,11 @@ import {ChefProfile} from './ChefProfile'
 import CustomerProfile from './CustomerProfile'
 import Login from './Login'
 import { Logout } from './Logout'
-import {useNavigate} from 'react-router-dom'
+// import {useNavigate} from 'react-router-dom'
 // import { useState, useEffect } from 'react';
 
 function Profile({user, newFood}) {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     if (user.user_type ==='chef') {
         return(

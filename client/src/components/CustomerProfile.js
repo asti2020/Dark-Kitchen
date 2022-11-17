@@ -5,10 +5,16 @@ import {useEffect, useState} from 'react'
 
 function CustomerProfile({user}) {
     const [orderFood, setOrder] = useState([])
-
+    const jwt_token = localStorage.getItem("jwt");
     useEffect(() => {
         if (user.user_type === 'order') {
-            fetch(`/orders`)
+            fetch(`/orders`,{
+                headers: {
+                    Authorization: "Bearer " + jwt_token,
+                    'Content-Type': 'application/json'
+                }
+            })
+
                 .then(res => res.json())
                 .then(res => setOrder(res))
         } else {
@@ -16,8 +22,8 @@ function CustomerProfile({user}) {
             console.log('no order')
         }
         
-    },[user.user_type])
-
+    },[])
+    console.log(orderFood)
     return (
         <>
         <div>
