@@ -22,7 +22,7 @@ function Home({user}) {
             <NavList />
                 <div id='InsideFromHome'>
                     <p>Welcome to the Dark Kitchen!</p>
-                    <p> Here you can find the best food in the world </p>
+                    <p>Here you can find the best food in the world</p>
                     <div id='gridContainer'>
                         <FoodList user={user} newFood={newFood} foods={foods}/>
                     </div>
