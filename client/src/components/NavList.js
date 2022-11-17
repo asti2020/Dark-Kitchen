@@ -14,39 +14,21 @@ function NavList() {
   let activeClassName = "nav-link-active";
 
   return (
-    <nav>
+    <nav id='navBar'>
       <ul>
         <li>
-          <NavLink
-            to="Home"
-            style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
-          >
-            Home
+          <NavLink to="/profile">
+            Add more food dishes
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="Profile"
-            className={({ isActive }) =>
-              isActive ? activeClassName : undefined
-            }
-          >
-            Profile
+          <NavLink to="/cart">
+            Cart
           </NavLink>
         </li>
         <li>
-          <NavLink to="Cart">
-            {({ isActive }) => (
-              <span
-                className={
-                  isActive ? activeClassName : undefined
-                }
-              >
-                Cart
-              </span>
-            )}
+          <NavLink to="/">
+            Logout
           </NavLink>
         </li>
       </ul>

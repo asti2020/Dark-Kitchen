@@ -1,6 +1,7 @@
 import React from 'react'
 import {FoodList} from './FoodList'
 import {useState, useEffect} from 'react'
+import NavList from './NavList'
 
 
 function Home({user}) {
@@ -18,6 +19,7 @@ function Home({user}) {
         console.log(foods)
             return ( 
             <>
+            <NavList />
                 <div id='InsideFromHome'>
                     <h2 id='homeH2'>Logo</h2>
                     <p>Welcome to the Dark Kitchen!</p>

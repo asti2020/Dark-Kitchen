@@ -153,6 +153,7 @@ body {
   background-color: var(--lightGrey);
   height: auto;
   padding-bottom: 15px;
+  padding-top: 40.5px;
 }
 #homeH2 {
   margin: 0;
@@ -178,6 +179,26 @@ body {
 }
 
 /****************************************** Home Page ************************************/
+
+/****************************************** Nav Bar   ************************************/
+
+#navBar {
+  background-color: var(--lightGrey);
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  /* box-shadow: 3px 3px 10px var(--darkGrey); */
+}
+ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+li {
+  margin-right: 10px;
+}
+
+/****************************************** Nav Bar   ************************************/
 
 
 /**************************************  Media Query's  ****************************************/

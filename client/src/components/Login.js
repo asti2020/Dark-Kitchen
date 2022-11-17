@@ -31,7 +31,7 @@ function Login({setUser}) {
                 res.json()
                 .then(user => {
                     localStorage.setItem("jwt", user.token);
-                    navigate('/profile')
+                    navigate('/home')
                 })
                     }
         })
