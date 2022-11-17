@@ -11,9 +11,8 @@ function Profile({user, newFood}) {
 
     if (user.user_type ==='chef') {
         return(
-            <div> <ChefProfile newFood={newFood}  user={user}/>
-            <Logout />
-            </div> )
+            <> <ChefProfile newFood={newFood}  user={user}/>
+            </> )
     } else if (user.user_type === 'order') {
         return (
             <div>

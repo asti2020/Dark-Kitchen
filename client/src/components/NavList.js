@@ -1,36 +1,38 @@
 import React from 'react'
-import { Button } from 'react-bootstrap';
+//import { Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom'
 import { BsCart3 } from "react-icons/bs"
-
+import logo from '../images/logo.png'
 
 function NavList({count}) {
   return (
-    <>
-      <div className='navListhead'>
-        <NavLink to="/"><div className="logo"> <img src="" alt="logo" /></div></NavLink>
               <nav>
-                <ul className='nabBar'>
+                <ul>
+                  <li>
+                    <img id='logo' src={logo} alt='logo'/>
+                  </li>
                     <li>
-                      <NavLink to="Home" >
-                        <Button> Home </Button>
+                      <NavLink to="/home" >
+                        Home
                       </NavLink>
                     </li>
                     <li>
-                      <NavLink to="Profile" >
-                        <Button>Profile</Button>
+                      <NavLink to="/profile" >
+                        Profile
                       </NavLink>
                     </li>
                     <li>
-                      <NavLink to="Cart">
-                        <Button>{count}<BsCart3/></Button>
+                      <NavLink to='/'>
+                        Add more dishes!
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/cart">
+                        <BsCart3>{count}</BsCart3>
                       </NavLink>
                     </li>
                 </ul>
               </nav>
-        </div>
-
-      </>
     );
 }
 

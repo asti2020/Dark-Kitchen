@@ -7,9 +7,9 @@ function FoodForm({ user, newFood }) {
     const navigate = useNavigate();
     const[foodName, setFoodName] = useState("")
     const[foodPrice, setPrice] = useState("")
-    const[ingreDients, setIngredients] = useState(" ")
-    const[foodPicture, setFoodPicture] = useState(" ")
-    const[cateGory, setCategory] = useState(" ")
+    const[ingredients, setIngredients] = useState("")
+    const[foodPicture, setFoodPicture] = useState("")
+    const[category, setCategory] = useState("")
 
     console.log(user.user_type)
     const token = localStorage.getItem('jwt')
@@ -26,9 +26,9 @@ function FoodForm({ user, newFood }) {
                 body: JSON.stringify({
                     food_name: foodName,
                     price: foodPrice,
-                    ingredient: ingreDients,
+                    ingredient: ingredients,
                     picture: foodPicture,
-                    category: cateGory
+                    category: category
                 })
             })
             .then(res => res.json())
@@ -46,7 +46,7 @@ function FoodForm({ user, newFood }) {
     }
 
     const handleUpdateForm = (e) => {
-        console.log("the edit is comming")
+        console.log("the edit is coming")
         e.preventDefault();
         if (user.user_type === 'chef') {
 
@@ -59,9 +59,9 @@ function FoodForm({ user, newFood }) {
                 body: JSON.stringify({
                     food_name: foodName,
                     price: foodPrice,
-                    ingredient: ingreDients,
+                    ingredient: ingredients,
                     picture: foodPicture,
-                    category: cateGory
+                    category: category
                 })
             })
             .then(res => res.json())
@@ -72,63 +72,67 @@ function FoodForm({ user, newFood }) {
                 <div className="container">
                     <div className="jumbotron">
                         <h1 className="display-4">Welcome, {user.user_type}!</h1>
-                        <p className="lead">
-
-                </p>
+                        <p className="lead"></p>
                     </div>
                 </div>
             );
     }}
     return (
-    <div>
-        <form className='form' onSubmit={handleSubmit} >
-            <div className="form-group">
-                <label>Food Name</label>
-                <input 
-                    type="text" 
-                    className="form-control" 
-                    placeholder="Food Name" 
+        <>
+        <form onSubmit={handleSubmit} >
+            <div className='foodFormInputDiv'>
+                <input
+                    type="text"
+                    className="foodInput"
+                    placeholder="Food Name"
                     value={foodName}
-                    onChange={e => setFoodName(e.target.value)} 
+                    onChange={e => setFoodName(e.target.value)}
                 />
-                <label>Price</label>
-                <input  
-                    type="text" 
-                    className="form-control" 
-                    placeholder="Price" 
+            </div>
+            <div className='foodFormInputDiv'>
+                <input
+                    type="text"
+                    className="foodInput"
+                    placeholder="Price"
                     value={foodPrice}
                     onChange={e => setPrice(e.target.value)}
                 />
-                <label>Ingredients</label>
-                <input 
-                    type="text" 
-                    className="form-control" 
-                    placeholder="Ingredients" 
-                    value={ingreDients}
+            </div>
+            <div className='foodFormInputDiv'>
+                <input
+                    type="text"
+                    className="foodInput"
+                    placeholder="Ingredients"
+                    value={ingredients}
                     onChange={e => setIngredients(e.target.value)}
                 />
-                <label>Picture</label>
-                <input 
-                    type="text" 
-                    className="form-control" 
-                    placeholder="Picture" 
+            </div>
+            <div className='foodFormInputDiv'>
+                <input
+                    type="text"
+                    className="foodInput"
+                    placeholder="Picture"
                     value={foodPicture}
                     onChange={e => setFoodPicture(e.target.value)}
                 />
-                <label>Category</label>
-                <input 
-                    type="text" 
-                    className="form-control" 
-                    placeholder="Category" 
-                    value={cateGory}
+            </div>
+            <div className='foodFormInputDiv'>
+                <input
+                    type="text"
+                    className="foodInput"
+                    placeholder="Category"
+                    value={category}
                     onChange={e => setCategory(e.target.value)}
                 />
             </div>
-            <button className="btn btn-primary">Submit</button>
-        </form>
 
-        <Updatebutton onClick={handleUpdateForm} user={user} />
-    </div>
+            <button style={{marginRight: '10px'}}className="loginBtn">Submit</button>
+            <button onClick={handleUpdateForm} className="loginBtn">Update</button>
+
+        </form>
+        {/* <button onClick={handleUpdateForm} className="btn btn-primary">Update</button> */}
+
+    </>
     )
 }
 
