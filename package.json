@@ -9,5 +9,23 @@
     "clean": "rm -rf public",
     "deploy": "cp -a client/build/. public/",
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asti2020/Dark-Kitchen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asti2020/Dark-Kitchen/issues"
+  },
+  "homepage": "https://github.com/asti2020/Dark-Kitchen#readme",
+  "dependencies": {
+    "serve": "^14.1.1"
   }
 }
