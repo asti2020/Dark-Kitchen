@@ -4,10 +4,11 @@ export const Logout = ({setUser}) => {
     const navigate = useNavigate();
     const handleClick = () => {
         localStorage.removeItem('jwt')
-        navigate('/login')
+        navigate('/')
     }
     return (
-
+        <>
         <button onClick={handleClick}>Logout</button>
+        </>
     )
 }

@@ -25,13 +25,11 @@ export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick
 
 
     return (
-        <div>
-            
-            <div className="food-card">
-                <Card>
-                    <img className='foodImage' src={food.picture} alt={food.food_name} />
+        <>
+                <div className='gridFoodItems'>
+                    <img className='foodImage' src={'https://nativefoods.com/wp-content/uploads/2021/06/footer-cta-module-1197x798.png'} alt={food.food_name} />
                     <h3>{food.food_name}</h3>
-                    <p>Ingre:{food.ingredient}</p>
+                    <p>{food.ingredient}</p>
                     <p>$:{food.price}</p>
                     {user.user_type === 'chef' ? <div>
                     <button onClick={onClickEdit} className="btn btn-primary">Edit</button> 
@@ -42,6 +40,7 @@ export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick
                 </Card>
             </div>
         </div>
+
     )
 }
 

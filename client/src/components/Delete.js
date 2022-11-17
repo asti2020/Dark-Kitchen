@@ -12,9 +12,9 @@ export const Delete = ({food, onDeleteProduct}) => {
             }).then(res => res.text())
             .then(data => onDeleteProduct(data)) 
     }
-    return (
-        <div>
-            <button onClick={handleDelete} className="btn btn-primary">DELETE</button>
-        </div>
-    )
+  return (
+    <>
+        <button onClick={handleDelete} className="btn btn-primary">DELETE</button>
+    </>
+  )
 }

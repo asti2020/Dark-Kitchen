@@ -1,5 +1,5 @@
 
-import '../App.css';
+// import '../App.css';
 import Signup from './Signup';
 import { useState, useEffect } from 'react';
 import  Login  from './Login';
@@ -75,5 +75,6 @@ console.log(user)
       </Routes>
       </div>
     );
+
 }
 export default App;
