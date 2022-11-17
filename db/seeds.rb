@@ -1,6 +1,7 @@
 puts "Seeding database..."
 # FOR TESTING PURPOSES ONLY
 # PRODUCT, FOR TESTING PURPOSES ONLY
+puts "1"
 Product.destroy_all
 product1 = Product.create({:name=>"chocolate bars", :price => 23})
 product2 = Product.create({:name=>"flour", :price => 3})
@@ -9,6 +10,7 @@ product4 = Product.create({:name=>"eggs", :price => 4})
 product5 = Product.create({:name=>"milk", :price => 3})
 
 # ORDER/LINE ORDER STUFF, FOR TESTING PURPOSES ONLY
+puts "2"
 puts "Total number of products: #{Product.all.count}"
 puts "Product names: #{Product.all.pluck("name")}"
 puts "Product1: #{product1.name} price: #{product1.price.round(2)}"
@@ -18,6 +20,7 @@ puts "Product4: #{product4.name} price: #{product4.price.round(2)}"
 puts "Product5: #{product5.name} price: #{product5.price.round(2)}"
 
 # CART, FOR TESTING PURPOSES ONLY
+puts "3"
 Cart.destroy_all
 puts "\nTotal cart count: #{Cart.all.count}"
 puts "Done seeding database."

@@ -11,4 +11,4 @@ class Cart < ApplicationRecord
     return sum
   end
 end
-end
+

@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   #, only: [:index, :show, :new, :create]
   resources :carts
   #, only: [:index, :show, :destroy]
-  resources :line_items
+  # resources :line_items
   #, only: [:create, :add_quantity, :subtract_quantity, :destroy]
   resources :products
   #, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :users
   #, only: [:create]
-  
+
   get '/me', to: "users#me"
   post '/auth/login', to: "auths#login"
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
