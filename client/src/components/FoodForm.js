@@ -10,7 +10,7 @@ function FoodForm({ user }) {
     const[foodPicture, setFoodPicture] = useState("")
     const[category, setCategory] = useState("")
 
-    console.log(user.user_type)
+    //console.log(user.user_type)
     const token = localStorage.getItem('jwt')
     const handleSubmit = (e) => {
         console.log(user.user_type)

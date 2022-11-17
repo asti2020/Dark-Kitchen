@@ -120,7 +120,6 @@ body {
 #chefH3 {
   margin: 0;
 }
-
 #chefProfileForm {
   background-color: var(--lightGrey);
   height: 450px;
@@ -149,4 +148,44 @@ body {
 }
 /**************************************  Chef Profile Page     **********************************/
 
+/****************************************** Home Page ************************************/
+#InsideFromHome{
+  background-color: var(--lightGrey);
+  height: auto;
+  padding-bottom: 15px;
+}
+#homeH2 {
+  margin: 0;
+}
+.foodImage {
+  width: 65%;
+  border-radius: 10px;
+}
+#gridContainer {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: auto auto auto;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-content: space-evenly;
+}
+.gridFoodItems {
+  background-color: var(--white);
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 6px 6px 10px var(--grey);
+}
 
+/****************************************** Home Page ************************************/
+
+
+/**************************************  Media Query's  ****************************************/
+
+@media only screen and (max-width: 700px) {
+  .signInInput {
+    width: 100%;
+  }
+}
+
+/**************************************  Media Query's  ****************************************/

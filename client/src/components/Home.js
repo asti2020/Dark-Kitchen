@@ -19,13 +19,13 @@ function Home({user}) {
             return ( 
             <>
                 <div id='InsideFromHome'>
-                    <h1>Logo</h1>
+                    <h2 id='homeH2'>Logo</h2>
                     <p>Welcome to the Dark Kitchen!</p>
                     <p> Here you can find the best food in the world </p>
-                </div>
-                <div>
-                    <FoodList user={user} newFood={newFood} foods={foods}/>
+                    <div id='gridContainer'>
+                        <FoodList user={user} newFood={newFood} foods={foods}/>
                     </div>
+                </div>
             </>
             )
 }
