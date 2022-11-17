@@ -60,9 +60,9 @@ function FoodForm({ user, newFood }) {
                 body: JSON.stringify({
                     food_name: foodName,
                     price: foodPrice,
-                    ingredient: ingreDients,
+                    ingredient: ingredients,
                     picture: foodPicture,
-                    category: cateGory
+                    category: category
                 })
             })
             .then(res => res.json())
@@ -135,7 +135,7 @@ function FoodForm({ user, newFood }) {
         </form>
 
         <Updatebutton onClick={handleUpdateForm} user={user} />
-    </div>
+    </>
     )
 }
 

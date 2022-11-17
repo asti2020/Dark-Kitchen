@@ -25,7 +25,7 @@ export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick
 
 
     return (
-        <>
+        
                 <div className='gridFoodItems'>
                     <img className='foodImage' src={'https://nativefoods.com/wp-content/uploads/2021/06/footer-cta-module-1197x798.png'} alt={food.food_name} />
                     <h3>{food.food_name}</h3>
@@ -37,9 +37,9 @@ export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick
                     </div>
                     : 
                     <button onClick={onClick} className="btn btn-primary">Add to Cart</button>}
-                </Card>
-            </div>
-        </div>
+                </div>
+
+        
 
     )
 }

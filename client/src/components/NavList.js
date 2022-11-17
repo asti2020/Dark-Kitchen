@@ -2,8 +2,6 @@ import React from 'react'
 //import {useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../images/logo.png'
-import { Button } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom'
 import { BsCart3 } from "react-icons/bs"
 
 
@@ -35,7 +33,7 @@ function NavList() {
         </li>
         <li>
           <NavLink to="Cart">
-            <Button>{count}<BsCart3/></Button>
+            <><BsCart3/></>
           </NavLink>
         </li>
       </ul>
