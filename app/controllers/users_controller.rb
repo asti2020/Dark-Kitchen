@@ -9,11 +9,9 @@ class UsersController < ApplicationController
             token = encode_token({user_id: user.id, user_type: user.user_type})
             render json: {user: UserSerializer.new(user), jwt: token}, status: :created
         end
-
         def me
             render json: current_user, status: :accepted
         end
-
         def profile
             if current_user
                 render json: current_user, status: :ok
@@ -22,8 +20,6 @@ class UsersController < ApplicationController
                     render json: current_user, status: :not_found
             end
         end
-
-
 
 private
         def user_params

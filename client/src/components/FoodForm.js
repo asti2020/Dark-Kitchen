@@ -1,8 +1,9 @@
 import React from 'react'
 import {useState} from 'react'
 import { useNavigate } from "react-router-dom";
+import { Updatebutton } from './Updatebutton';
 
-function FoodForm({ user }) {
+function FoodForm({ user, newFood }) {
     const navigate = useNavigate();
     const[foodName, setFoodName] = useState("")
     const[foodPrice, setPrice] = useState("")
@@ -16,7 +17,7 @@ function FoodForm({ user }) {
         console.log(user.user_type)
         e.preventDefault();
         if (user.user_type === 'chef') {
-            fetch('/products', {
+            fetch('./products', {
                 method: "POST",
                 headers: {
                     Authorization: "Bearer " + token,
@@ -31,7 +32,10 @@ function FoodForm({ user }) {
                 })
             })
             .then(res => res.json())
-            .then((food) => console.log(food))
+            .then((food) => {
+                console.log(food)
+                newFood(food)
+            })
             setFoodName("")
             setPrice("")
             setIngredients("")
@@ -43,26 +47,39 @@ function FoodForm({ user }) {
     // console.log(foods)
 
     const handleUpdateForm = (e) => {
+        console.log("the edit is comming")
         e.preventDefault();
-        fetch("/products/:id", {
-            method: "PATCH",
-            headers: {
-                Authorization: "Bearer " + token,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name: foodName,
-                price: foodPrice,
-                ingredients: ingredients,
-                picture: foodPicture,
-                category: category
+        if (user.user_type === 'chef') {
+
+            fetch('/products/:id', {
+                method: "PATCH",
+                headers: {
+                    Authorization: "Bearer " + token,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    food_name: foodName,
+                    price: foodPrice,
+                    ingredient: ingreDients,
+                    picture: foodPicture,
+                    category: cateGory
+                })
             })
-        })
-        .then(res => res.json())
-    .then((food) => console.log(food))
-}
+            .then(res => res.json())
+            .then((food) => console.log(food))
 
+        } else {
+            return (
+                <div className="container">
+                    <div className="jumbotron">
+                        <h1 className="display-4">Welcome, {user.user_type}!</h1>
+                        <p className="lead">
 
+                </p>
+                    </div>
+                </div>
+            );
+    }}
     return (
     <>
         <form onSubmit={handleSubmit} >
@@ -116,9 +133,9 @@ function FoodForm({ user }) {
             <button onClick={handleUpdateForm} className="loginBtn">Update</button>
 
         </form>
-        {/* <button onClick={handleUpdateForm} className="btn btn-primary">Update</button> */}
 
-    </>
+        <Updatebutton onClick={handleUpdateForm} user={user} />
+    </div>
     )
 }
 

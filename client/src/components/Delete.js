@@ -1,18 +1,16 @@
 import React from 'react'
 
-export const Delete = () => {
+export const Delete = ({food, onDeleteProduct}) => {
     let token = localStorage.getItem('jwt')
     const handleDelete = (e) => {
         e.preventDefault();
-            fetch("/products", {
+        fetch(`/products/${food.id}`, {
                 method: "DELETE",
                 headers: {
-                    Authorization: "Bearer " + token,
-                    "Content-Type": "application/json"
-                }
-            }) 
-            .then(res => res.json())
-            .then((food) => console.log(food))
+                    Authorization: "Bearer " + token
+                },
+            }).then(res => res.text())
+            .then(data => onDeleteProduct(data)) 
     }
   return (
     <>

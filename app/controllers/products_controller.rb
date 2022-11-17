@@ -3,6 +3,30 @@ class ProductsController < ApplicationController
     skip_before_action :authorized, only: [:index]
         before_action :authorized, only: [ :create ]
 
+
+    # def add_to_cart
+    #     if current_user == "order"
+    #         product = Product.find(params[:id])
+    #         product.update(cart: true)
+    #         render json: product
+    #     else
+    #         render json: {error: "You are not allowed to add to cart"}, status: :unauthorized
+    #     end
+
+    # end
+
+    # def remove_from_cart
+    #     if current_user == "order"
+    #         product = Product.find(params[:id])
+    #         product.update(cart: false)
+    #         render json: product
+    #     elsewhere
+    #         render json: {error: "You are not allowed to remove from cart"}, status: :unauthorized
+    #     end
+    # end
+
+
+
     def index
         products = Product.all
         render json: products
@@ -17,6 +41,13 @@ class ProductsController < ApplicationController
             # render get '/login', status: :unauthorized
         end
     end
+
+    
+    def show
+        product = Product.find(params[:id])
+        render json: product, status: :found
+    end
+    
 
     def update
         if current_user.user_type == "chef"

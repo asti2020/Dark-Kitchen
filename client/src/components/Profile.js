@@ -1,77 +1,38 @@
 import React from 'react'
 import {ChefProfile} from './ChefProfile'
-//import Login from './Login'
-//import { Logout } from './Logout'
-//import { useState, useEffect } from 'react';
+import CustomerProfile from './CustomerProfile'
+import Login from './Login'
+import { Logout } from './Logout'
+import {useNavigate} from 'react-router-dom'
+// import { useState, useEffect } from 'react';
 
-function Profile({user}) {
-    //const [profileChef, setUserChef] = useState({})
-    //const [profileOrder, setProfileOrder] = useState({})
+function Profile({user, newFood}) {
+    const navigate = useNavigate()
 
-    // if(user === 'undefined' || user === null) {
-    //     user = localStorage.getItem('jwt');       
-    // }
-   if (user.user_type === 'chef') {
-        return <> <ChefProfile  user={user}/>
-         </>
-    } else {
-    return (
-        <div id='profilePageDiv'>
-
-
-            <div id='leftItem'>
-
+    if (user.user_type ==='chef') {
+        return(
+            <div> <ChefProfile newFood={newFood}  user={user}/>
+            <Logout />
+            </div> )
+    } else if (user.user_type === 'order') {
+        return (
+            <div>
+                <h3>Customer Profile</h3>
+                <CustomerProfile  user={user}/>
             </div>
-
-            <div id='middleColumn'>
-
-            </div>
-
-            <div id='rightColumn'>
-
-            </div>
-            
-            {/* <ChefProfile /> */}
-            {/* <Login />
-            <Logout /> */}
-
-        </div>
     )
+    
+
+    } else {
+        return (
+            <div>
+                <Login />
+            </div>
+        )
+
     }
-}
+    
+    }
 
-
-
-
-
-    // return (
-    //     <div>
-    //         if(user.user_type ==="chef"){
-    //             <ChefProfile user={user}/>
-    //         } else {
-    //             <Login />
-    //         }
-
-    //     </div>
-    // )
-
-
-//     // let token = localStorage.getItem('jwt')
-//     if (user.user === 'undefined' ){
-//         return <div> <Login /> </div>
-//     } else {
-//     return (
-//         <div>
-//             <h3>Profile</h3>
-//             <ChefProfile />
-//         </div>
-//     )
-//     }
-// }
-// if user.user_type === 'chef'
-//     return <ChefProfile />
-// else
-//     return <CustomerProfile />
-// end
 export default Profile
 

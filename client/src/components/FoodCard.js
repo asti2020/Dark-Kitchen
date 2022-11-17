@@ -1,7 +1,29 @@
 import React from 'react'
+import { Card } from 'react-bootstrap'
 import {Delete} from './Delete'
+import { useNavigate } from 'react-router-dom'
 
-export const FoodCard = ({food, user}) => {
+export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick}) => {
+    const navigate = useNavigate()
+
+    // const onAddToCart = () => {
+    //     onUpdatedProduct(food.id)
+    //     onClick()
+
+    // }
+            // const onRemoveFromCart = () => {
+            //     onDeleteProduct(food.id)
+            //     onClick()
+
+            // }
+
+            const onClickEdit = () =>{
+                navigate('/edit')
+
+            }
+
+
+
     return (
         <>
                 <div className='gridFoodItems'>
@@ -10,13 +32,15 @@ export const FoodCard = ({food, user}) => {
                     <p>{food.ingredient}</p>
                     <p>$:{food.price}</p>
                     {user.user_type === 'chef' ? <div>
-                    <button>Edit</button>
-                    <Delete food={food}/>
+                    <button onClick={onClickEdit} className="btn btn-primary">Edit</button> 
+                    <Delete onDeleteProduct={onDeleteProduct} user={user} food={food}/>
                     </div>
-                    :
-                    <button>Add to Cart</button>}
-                </div>
-        </>
+                    : 
+                    <button onClick={onClick} className="btn btn-primary">Add to Cart</button>}
+                </Card>
+            </div>
+        </div>
+
     )
 }
 

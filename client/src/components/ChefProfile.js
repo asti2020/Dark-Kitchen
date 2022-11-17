@@ -1,17 +1,16 @@
 import React from 'react'
 import FoodForm from './FoodForm'
-// import {useNavigate} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 //import { FoodList } from './FoodList';
 import {Logout} from './Logout';
 //import { NavList } from './NavList';
 
-
-export const ChefProfile = ({user}) => {
+export const ChefProfile = ({user, newFood}) => {
+    let foods = user.products
     const navigate = useNavigate()
     console.log(user)
         let token = localStorage.getItem('jwt')
-    if (token === '' ){
+    if (token === null ){
             navigate('/login')
             console.log("no token found")
             return null
