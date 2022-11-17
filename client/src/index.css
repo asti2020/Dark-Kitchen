@@ -187,7 +187,8 @@ body {
   padding: 10px;
   position: fixed;
   width: 100%;
-  * box-shadow: 3px 3px 10px var(--darkGrey); */
+  /* box-shadow: 3px 3px 10px var(--darkGrey);  */
+}
 
 * ul {
   margin: 0;

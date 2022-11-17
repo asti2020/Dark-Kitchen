@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
  // eslint-disable-next-line 
-import NavList from "./NavList";
+// import NavList from "./NavList";
 import FoodList from "./FoodList";
 import Search from './Search';
 import { FoodCard } from './FoodCard';
