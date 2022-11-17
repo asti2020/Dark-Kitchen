@@ -2,11 +2,11 @@ puts "Seeding database..."
 # FOR TESTING PURPOSES ONLY
 # PRODUCT, FOR TESTING PURPOSES ONLY
 Product.destroy_all
-product1 = Product.create({:name=>"tomato", :price => 1})
-product2 = Product.create({:name=>"milk", :price => 3})
-product3 = Product.create({:name=>"bread", :price => 5.50})
-product4 = Product.create({:name=>"bacon", :price => 10})
-product5 = Product.create({:name=>"cheese", :price => 3.20})
+product1 = Product.create({:name=>"chocolate bars", :price => 23})
+product2 = Product.create({:name=>"flour", :price => 3})
+product3 = Product.create({:name=>"sugar", :price => 5})
+product4 = Product.create({:name=>"eggs", :price => 4})
+product5 = Product.create({:name=>"milk", :price => 3})
 
 # ORDER/LINE ORDER STUFF, FOR TESTING PURPOSES ONLY
 puts "Total number of products: #{Product.all.count}"
