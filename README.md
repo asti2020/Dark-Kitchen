@@ -1,21 +1,27 @@
-# Phase 4 React/Rails API Project
+# Dark Kitchen (Phase 4 React/Rails API Project)
 
-## Description
+## The App
 
-We will be creating a dark kitchen react-rails app. Users will be able to log in as either a "Chef" or a "User." A Chef will have full CRUD capabilities, being able to create, read, update, and delete food (product) listings. Users will have partial crud capabilities: the ability to read listings, and create reviews. 
+Tired of crowded grocery stores? The constant search for new recipes? The endless dirty dishes taking over your sink? 
 
-## Requirements
+Sure, you could go out. But there's so many people out there. Maybe order in? Except Grubhub raised their fees, again! 
 
-As a react-rails app, this projecty will use React for the front end and a Rails API for the backend:
+What now? 
 
-- The API will contain several tables: A user table (where a boolean will determine whether the user is a Chef), a products table (listing all of the foods), and an order table. The User and Products table will have a many-to-many relationship through the Order table. 
+Welcome to the **Dark Kitchen**, where users can purchase a variety of affordable home-cooked meals from local home chefs! Now you can enjoy homemade breakfasts, lunches, dinners, and desserts delivered right to your door. No hassle, no questionable Tasty recipes, no inflated fees--_and no dirty dishes_. 
 
-- The front end will have at least three different client side routes (accessed through a navigation bar), including Login, Homepage, and Listings pages. 
+Create a profile, browse the many options, add them to your cart, and get ready for a delicious home-cooked meal--without having to do it yourself! 
 
-Additionally, the app will have authentication/authorization capacbilities through the login page. 
+## Features
 
-## Stretch Goals
-As a stretch goal, we hope to implement a working cart for non-chef users to place orders. This will require an additional table joining the Users and Orders tables. 
+Users are able to make a profile (via post requests) and log in as either a "Chef" or a Customer with a username and password. As Chef, they are able to create, read, update, and delete food listings. Customers can view all of the food offerings, add them to a shopping cart (via post requests), remove items from their shopping cart (via delete requests), and view their order history. 
 
-Additionally, we want to give non-chef users the ability to edit and delete their reviews through a form in the reviews section. 
+## The Technical Stuff
 
+As a react-rails app, this project uses React for the front end and a Rails API for the backend:
+
+- The API contains several tables, including a User table (where a type will determine whether the user is a Chef), a Products table (listing all of the foods), and Order table joining the user and products table. There is also a Cart and Cart_Lines table for the shopping cart, connected to Orders, Products, and Users. 
+
+- The front end has four different client side routes: a Homepage, Login Page, a Profile Page, and the Listings page. These are accessed through icons on a naviagtion bar, which also features a (controlled form) Searchbar. 
+
+Additionally, the app has authentication and authorization capacbilities through the login page: users need a username and password to access their profiles. 
