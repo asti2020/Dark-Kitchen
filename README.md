@@ -8,6 +8,8 @@ Sure, you could go out. But there's so many people out there. Maybe order in? Ex
 
 What now? 
 
+<img width="1512" alt="Screen Shot 2022-11-18 at 12 53 01 PM" src="https://user-images.githubusercontent.com/81066555/202770395-39f359e7-8cfb-4149-b598-3db6a0424db1.png">
+
 Welcome to the **Dark Kitchen**, where users can purchase a variety of affordable home-cooked meals from local home chefs! Now you can enjoy homemade breakfasts, lunches, dinners, and desserts delivered right to your door. No hassle, no questionable Tasty recipes, no inflated fees--_and no dirty dishes_. 
 
 Create a profile, browse the many options, add them to your cart, and get ready for a delicious home-cooked meal--without having to do it yourself! 
