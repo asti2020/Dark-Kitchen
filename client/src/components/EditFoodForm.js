@@ -24,8 +24,7 @@ function EditFoodForm({updateProducts, user}) {
         const { name, value } = e.target
         setFormData({ ...formData, [name]: value })
     }
-
-    const token = localStorage.getItem('jwt')
+const token = localStorage.getItem('jwt')
 function onSubmit(e){
         e.preventDefault()
         //PATCH to `/productions/${id}`
@@ -40,7 +39,6 @@ function onSubmit(e){
         })
         .then(res => res.json())
         .then(updateProducts)
-
     }
     else {
         navigate('/login')

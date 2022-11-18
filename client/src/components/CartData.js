@@ -1,13 +1,15 @@
 import React from 'react'
 import  CartDataSup  from './CartDataSup.js'
 
- function CartData({count}) {
+function CartData({count, foods}) {
   return (
     <div>
-        <CartDataSup count={count} />
+     
+
+        <CartDataSup foods={foods} count={count} />
+       
     </div>
   )
 }
-
 export default CartData
 

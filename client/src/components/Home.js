@@ -5,33 +5,14 @@ import {useState, useEffect} from 'react'
 function Home({user, onClick}) {
     const [foods, setFoods] = useState([])
 
-    console.log(user)
+    // console.log(user)
         useEffect (() => {
             fetch("/products")
                 .then(res => res.json())
                 .then(res => setFoods(res))
         }, [])
-
-        // const onDeleteProduct = (food) => {
-        //     const newFoods = foods.filter(f => f.id !== food.id)
-        //     setFoods(newFoods)
-        // }
-
-        // const onUpdatedProduct = (food) => {
-        //     const newFoods = foods.map(f => f.id === food.id? food : f)
-        //     setFoods(newFoods)
-        //     console.log(newFoods)
-        // }
-
-        // const newFood =(food) => {
-        //     const newFoods = [...foods, food]
-        //     setFoods(newFoods)
-
-        // }
-
-        
-        console.log(foods)
-            return ( 
+        console.log(foods, user)
+        return ( 
             <>
                 <div>
                     <h1>Logo</h1>
@@ -40,9 +21,9 @@ function Home({user, onClick}) {
                 </div>
                 <div>
                     <FoodList onClick={onClick} user={user} foods={foods}/>
-                    </div>
+                </div>
             </>
-            )
+        )
 }
 
 export default Home

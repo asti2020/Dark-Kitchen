@@ -15,10 +15,10 @@ import Cart from './Cart';
 
 function App() {
   const navigate = useNavigate()
-    const [user, setUser] = useState({});
-    const [foods, setFoods] = useState([])
-    const jwt_token = localStorage.getItem("jwt");
-    console.log(jwt_token);
+  const [user, setUser] = useState({});
+  const [foods, setFoods] = useState([])
+  const jwt_token = localStorage.getItem("jwt");
+  // console.log(jwt_token);
     useEffect(() => {
       fetch('/me',{
         method: 'GET',
@@ -29,50 +29,39 @@ function App() {
       })
         .then(res => res.json())
         .then(user => setUser(user))
-
     }, [ jwt_token])
 
-const[count, setCount] = useState(0)
-
-const handleCount = () => {
-  setCount(count + 1)
-}
-
-// const [foods, setFoods] = useState([])
-
-console.log(user)
+  const[count, setCount] = useState(0)
+  const handleCount = () => {
+    setCount(count + 1)
+    }
+    // const [foods, setFoods] = useState([])
+    // console.log(user)
     useEffect (() => {
-        fetch("/products")
+        fetch(`/products`)
             .then(res => res.json())
             .then(res => setFoods(res))
     }, [])
-
-
     const newFood =(food) => {
       const newFoods = [...foods, food]
       setFoods(newFoods)
-
-  }
-
+    }
     console.log(user.user_type)
-
-
     return (
       <div className="App" >
-        <div className='myNav'>
-        <NavList count={count}/>
-        </div>
-      <Routes>
-          <Route path="/*" element={<NotFound />} />
-          <Route exact path="/"  element={<Home onClick={handleCount} foods={foods} user={user} />} />
-          <Route exact path="/home"  element={<Home onClick={handleCount} user={user}/>} />
-          <Route exact path="/cart"  element={<Cart count={count} user={user}/>} />
-          <Route path="/login" element={<Login setUser={setUser} />} />
-          <Route path="/signup" element={<Signup setUser={setUser} />} />
-          <Route path="/logout" element={<Logout setUser={setUser} />} />
-          {user ? <Route path="/profile" element={<Profile newFood={newFood} user={user} />} /> : navigate('/login')}
-
-      </Routes>
+            <div className='myNav'>
+                <NavList count={count}/>
+            </div>
+        <Routes>
+            <Route path="/*" element={<NotFound />} />
+            <Route exact path="/"  element={<Home onClick={handleCount} foods={foods} user={user} />} />
+            <Route exact path="/home"  element={<Home onClick={handleCount} user={user}/>} />
+            <Route exact path="/cart"  element={<Cart foods={foods} count={count} user={user}/>} />
+            <Route path="/login" element={<Login setUser={setUser} />} />
+            <Route path="/signup" element={<Signup setUser={setUser} />} />
+            <Route path="/logout" element={<Logout setUser={setUser} />} />
+            {user ? <Route path="/profile" element={<Profile newFood={newFood} user={user} />} /> : navigate('/login')}
+        </Routes>
       </div>
     );
 }

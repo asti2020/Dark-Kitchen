@@ -8,7 +8,6 @@ import { Logout } from './Logout'
 
 function Profile({user, newFood}) {
     // const navigate = useNavigate()
-
     if (user.user_type ==='chef') {
         return(
             <div> <ChefProfile newFood={newFood}  user={user}/>
@@ -21,18 +20,15 @@ function Profile({user, newFood}) {
                 <CustomerProfile  user={user}/>
             </div>
     )
-    
-
     } else {
         return (
             <div>
                 <Login />
             </div>
         )
-
     }
     
-    }
+}
 
 export default Profile
 

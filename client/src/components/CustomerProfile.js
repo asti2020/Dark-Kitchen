@@ -1,15 +1,13 @@
 import { CustomerOrder } from "./CustomerOrder"
 import {useEffect, useState} from 'react'
 
-
-
 function CustomerProfile({user}) {
-    
     const [orderFood, setOrder] = useState([])
     const jwt_token = localStorage.getItem("jwt");
     useEffect(() => {
         if (user.user_type === 'order') {
             fetch(`/orders`,{
+                method: 'GET',
                 headers: {
                     Authorization: "Bearer " + jwt_token,
                     'Content-Type': 'application/json'
