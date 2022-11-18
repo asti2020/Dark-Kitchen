@@ -18,9 +18,9 @@ Users are able to make a profile and log in as either a "Chef" or a Customer wit
 
 ## The Technical Stuff
 
-- Chefs have the full CRUD capabilities in creating profiles and creating, reading, updating, and deleting food listings. Customers have partial CRUD capabilies in being able to read listings and their order history (read), adding and removing items in their cart (post and delete), and creating new profiles (post). 
+Chefs have the full CRUD capabilities in creating profiles and creating, reading, updating, and deleting food listings. Customers have partial CRUD capabilies in being able to read listings and their order history (read), adding and removing items in their cart (post and delete), and creating new profiles (post). 
 
-As a react-rails app, this project uses React for the front end and a Rails API for the backend:
+Additionally, as a react-rails app, this project uses React for the front end and a Rails API for the backend:
 
 - The API contains several tables, including a User table (where a type will determine whether the user is a Chef), a Products table (listing all of the foods), and Order table joining the user and products table. There is also a Cart and Cart_Lines table for the shopping cart, connected to Orders, Products, and Users. 
 
