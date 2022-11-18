@@ -30,15 +30,8 @@ class ApplicationController < ActionController::API
       end
 
       def current_cart
-        if decoded_token
-          cart_id = decoded_token[0]["cart_id"]
-          cart = Cart.find_by(id: cart_id)
-          # render json: cart, status: 200
-          render json: cart
-        end
+        cart = Cart.find_by(user_id: current_user.id).where(isActive: true)
       end
-      
-
 
       def authorized
           unless !!current_user

@@ -3,4 +3,6 @@ class CartsController < ApplicationController
         carts = Cart.all
         render json: carts, status: :ok
     end
+
+    
 end

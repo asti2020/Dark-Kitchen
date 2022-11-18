@@ -7,6 +7,8 @@ export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick
     const navigate = useNavigate()
     const jwt_token = localStorage.getItem("jwt");
 
+    console.log(food)
+
 const onAddToCart = (e) => {
     e.preventDefault()
     console.log("add to cart")
@@ -14,9 +16,10 @@ const onAddToCart = (e) => {
         method: 'POST',
         headers:{
             Authorization: "Bearer " + jwt_token,
-            'Accept': 'application/json'
+            'Accept': 'application/json',
+            'content-type': "application/json"
         }, body: JSON.stringify({
-            product_id: food.product_id,
+            product_id: food.id,
             quantity: 1
         })
 
