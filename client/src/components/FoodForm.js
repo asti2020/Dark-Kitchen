@@ -2,6 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 import { useNavigate } from "react-router-dom";
 import { Updatebutton } from './Updatebutton';
+import { NavLink } from 'react-router-dom';
 
 function FoodForm({ user, newFood }) {
     const navigate = useNavigate();
@@ -127,7 +128,7 @@ function FoodForm({ user, newFood }) {
             </div>
 
             <button style={{marginRight: '10px'}}className="loginBtn">Submit</button>
-            <button onClick={handleUpdateForm} className="loginBtn">Update</button>
+            <NavLink to='/home'><button onClick={handleUpdateForm} className="loginBtn">Dishes</button></NavLink>
 
         </form>
         {/* <button onClick={handleUpdateForm} className="btn btn-primary">Update</button> */}

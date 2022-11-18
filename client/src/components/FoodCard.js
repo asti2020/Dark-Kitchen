@@ -6,16 +6,16 @@ import { useNavigate } from 'react-router-dom'
 export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick}) => {
     const navigate = useNavigate()
 
-    // const onAddToCart = () => {
-    //     onUpdatedProduct(food.id)
-    //     onClick()
+    const onAddToCart = () => {
+        onUpdatedProduct(food.id)
+        onClick()
 
-    // }
-            // const onRemoveFromCart = () => {
-            //     onDeleteProduct(food.id)
-            //     onClick()
+    }
+            const onRemoveFromCart = () => {
+                onDeleteProduct(food.id)
+                onClick()
 
-            // }
+            }
 
             const onClickEdit = () =>{
                 navigate('/edit')

@@ -13,6 +13,9 @@ body {
   font-family: 'Baskervville', serif;
   color: var(--red);
 }
+h1, h2 {
+  font-family: 'Jost', sans-serif;
+}
 /**************************************   Sign up/ Login   **********************************/
 #homeH3 {
   margin: 0;
@@ -220,6 +223,32 @@ body {
   height: 320px;
 }
 /****************************************** Home Page ************************************/
+/****************************************** Profile/ Customer Page ********************************/
+#customerProfile{
+  text-align: center;
+}
+#previousOrderGrid {
+  display: grid;
+  grid-template-columns: 25% 350px;
+  grid-template-rows: 150px 150px 150px 150px;
+
+  row-gap: 10px;
+  justify-content: center;
+}
+.orderFoodItems {
+  overflow: hidden;
+}
+.orderImages {
+  width: 100%;
+}
+.orderInfo {
+  text-align: left !important;
+  padding-left: 5px;
+}
+#imgContainer {
+  /* overflow: hidden; */
+}
+/****************************************** Profile/ Customer Page ********************************/
 /****************************************** Error Page ************************************/
 #errorImage {
   text-align: center;
