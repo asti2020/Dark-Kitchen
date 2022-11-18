@@ -5,24 +5,32 @@ import { useNavigate } from 'react-router-dom'
 
 export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick}) => {
     const navigate = useNavigate()
+    const jwt_token = localStorage.getItem("jwt");
 
-    // const onAddToCart = () => {
-    //     onUpdatedProduct(food.id)
-    //     onClick()
+const onAddToCart = (e) => {
+    e.preventDefault()
+    console.log("add to cart")
+    fetch('/cart_items',{
+        method: 'POST',
+        headers:{
+            Authorization: "Bearer " + jwt_token,
+            'Accept': 'application/json'
+        }, body: JSON.stringify({
+            product_id: food.product_id,
+            quantity: 1
+        })
 
-    // }
-            // const onRemoveFromCart = () => {
-            //     onDeleteProduct(food.id)
-            //     onClick()
-
-            // }
+    })
+    .then(res => res.json())
+    .then(res => {
+        console.log(res)
+    })
+        onClick()
+}
 
             const onClickEdit = () =>{
                 navigate('/edit')
-
             }
-
-
 
     return (
         <div>
@@ -38,7 +46,7 @@ export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick
                     <Delete onDeleteProduct={onDeleteProduct} user={user} food={food}/>
                     </div>
                     : 
-                    <button onClick={onClick} className="btn btn-primary">Add to Cart</button>}
+                    <button onClick={onAddToCart} className="btn btn-primary">Add to Cart</button>}
                 </Card>
             </div>
         </div>

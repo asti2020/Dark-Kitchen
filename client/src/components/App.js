@@ -64,9 +64,9 @@ console.log(user)
         </div>
       <Routes>
           <Route path="/*" element={<NotFound />} />
-          <Route exact path="/"  element={<Home foods={foods} user={user} />} />
+          <Route exact path="/"  element={<Home onClick={handleCount} foods={foods} user={user} />} />
           <Route exact path="/home"  element={<Home onClick={handleCount} user={user}/>} />
-          <Route exact path="/cart"  element={<Cart user={user}/>} />
+          <Route exact path="/cart"  element={<Cart count={count} user={user}/>} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/signup" element={<Signup setUser={setUser} />} />
           <Route path="/logout" element={<Logout setUser={setUser} />} />

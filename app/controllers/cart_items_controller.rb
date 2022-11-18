@@ -11,5 +11,7 @@ class CartItemsController < ApplicationController
         render json: cartitem, status: :created
 end
 
+
+
 # User.second.carts.first.products
 end

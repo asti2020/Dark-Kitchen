@@ -26,6 +26,18 @@ function NavList({count}) {
                         <Button>{count}<BsCart3/></Button>
                       </NavLink>
                     </li>
+                    <li>
+
+                      <NavLink to="logout">
+                        <Button>Logout</Button>
+                      </NavLink>
+                      </li>
+                      
+                    <li>
+                      <NavLink to="login">
+                        <Button>Login</Button>
+                      </NavLink>
+                    </li>
                 </ul>
               </nav>
         </div>

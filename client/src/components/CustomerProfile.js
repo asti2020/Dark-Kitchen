@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react'
 
 
 function CustomerProfile({user}) {
+    
     const [orderFood, setOrder] = useState([])
     const jwt_token = localStorage.getItem("jwt");
     useEffect(() => {
@@ -14,7 +15,6 @@ function CustomerProfile({user}) {
                     'Content-Type': 'application/json'
                 }
             })
-
                 .then(res => res.json())
                 .then(res => setOrder(res))
         } else {
@@ -22,8 +22,10 @@ function CustomerProfile({user}) {
             console.log('no order')
         }
         
-    },[])
+    },[  jwt_token, user.user_type])
+    const foods = orderFood.user
     console.log(orderFood)
+    console.log(foods)
     return (
         <>
         <div>
