@@ -7,6 +7,7 @@ import {BiAddToQueue} from "react-icons/bi"
 import logo from '../images/logo.png'
 
 function NavList({count}) {
+  console.log(count, 'FROM NAVLIST')
   return (
           <div id='navBar'>
             <div id='leftNav'>

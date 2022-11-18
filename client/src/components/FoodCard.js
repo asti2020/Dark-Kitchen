@@ -34,7 +34,7 @@ export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick
                 <p className='foodInfo'>{food.ingredient}</p>
                 <p className='foodPrice'>$:{food.price}</p>
                 {user.user_type === 'chef' ?
-                    <div>
+                    <div id='chefEditBtn'>
                         <button>Edit</button>
                         <Delete food={food}/>
                     </div>

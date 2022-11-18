@@ -12,7 +12,7 @@ function FoodForm({ user, newFood }) {
     const[foodPicture, setFoodPicture] = useState("")
     const[category, setCategory] = useState("")
 
-    console.log(user.user_type)
+    console.log(user.user_type, 'FROM FOOD FORM COMPONENT')
     const token = localStorage.getItem('jwt')
     const handleSubmit = (e) => {
         console.log(user.user_type)
@@ -47,7 +47,6 @@ function FoodForm({ user, newFood }) {
     }
 
     const handleUpdateForm = (e) => {
-        console.log("the edit is coming")
         e.preventDefault();
         if (user.user_type === 'chef') {
 
@@ -128,7 +127,7 @@ function FoodForm({ user, newFood }) {
             </div>
 
             <button style={{marginRight: '10px'}}className="loginBtn">Submit</button>
-            <NavLink to='/home'><button onClick={handleUpdateForm} className="loginBtn">Dishes</button></NavLink>
+            <NavLink to='/home'><button className="loginBtn">Dishes</button></NavLink>
 
         </form>
         {/* <button onClick={handleUpdateForm} className="btn btn-primary">Update</button> */}

@@ -11,7 +11,7 @@ export const CustomerOrder = ({foods}) => {
                         <img className='orderImages' src='https://cdn.cnn.com/cnnnext/dam/assets/160929101749-essential-spanish-dish-paella-phaidon-full-169.jpg' alt='firstDish'/>
                     </div>
                 </div>
-                
+
                 <div className='orderInfo'>
                     <h3>Dish</h3>
                     <p>Order #: 1234056</p>
