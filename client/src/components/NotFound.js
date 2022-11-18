@@ -1,9 +1,15 @@
+import { NavLink } from "react-router-dom"
+import {FaHandPointLeft} from "react-icons/fa"
+
 function NotFound(){
     return(
-        <>
-            <h1>Sorry We can't find the Page you're looking for!</h1>
-            <h1>404 Not Found</h1>
-        </>
+        <div id="errorPage">
+            <div id="errorImage">
+                <img src="https://media.tenor.com/M2lkyMMq5woAAAAM/seinfeld-babu-bhatt.gif" alt="no_no_no" />
+                <NavLink id='errorLink'to='/home'>Here are you going? The food's over there</NavLink>
+                <NavLink to='/home'><FaHandPointLeft id="errorIcons"></FaHandPointLeft></NavLink>
+            </div>
+        </div>
     )
 }
 export default NotFound
