@@ -1,9 +1,11 @@
 import React from 'react'
+import NavList from './NavList';
 
 function Cart() {
     return (
-        <div>
-            <h3>Cart is comming soon!</h3>
+        <div id='cardDiv'>
+        <NavList />
+            <h3>Cart is coming soon!</h3>
         </div>
     )
 }

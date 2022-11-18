@@ -2,6 +2,7 @@ import React from 'react'
 import {ChefProfile} from './ChefProfile'
 import CustomerProfile from './CustomerProfile'
 import Login from './Login'
+import NavList from './NavList'
 import { Logout } from './Logout'
 import {useNavigate} from 'react-router-dom'
 // import { useState, useEffect } from 'react';
@@ -11,15 +12,16 @@ function Profile({user, newFood}) {
 
     if (user.user_type ==='chef') {
         return(
-            <div> <ChefProfile newFood={newFood}  user={user}/>
-            <Logout />
-            </div> )
+            <> <ChefProfile newFood={newFood}  user={user}/>
+            </> )
     } else if (user.user_type === 'order') {
         return (
-            <div>
-                <h3>Customer Profile</h3>
-                <CustomerProfile  user={user}/>
-            </div>
+            <>
+                <NavList />
+                <div id='customerProfile'>
+                    <CustomerProfile  user={user}/>
+                </div>
+            </>
     )
     
 

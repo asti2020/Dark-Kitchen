@@ -25,23 +25,24 @@ export const FoodCard = ({food, user, onUpdatedProduct, onDeleteProduct, onClick
 
 
     return (
-        <div>
-            
-            <div className="food-card">
-                <Card>
-                    <img className='foodImage' src={food.picture} alt={food.food_name} />
-                    <h3>{food.food_name}</h3>
-                    <p>Ingre:{food.ingredient}</p>
-                    <p>$:{food.price}</p>
-                    {user.user_type === 'chef' ? <div>
-                    <button onClick={onClickEdit} className="btn btn-primary">Edit</button> 
-                    <Delete onDeleteProduct={onDeleteProduct} user={user} food={food}/>
+        <>
+            <div className='gridFoodItems'>
+                <div className='imageContainer'>
+                    <img className='foodImage' src={food.picture} alt={food.name}/>
+                </div>
+                <h3 className='foodHeader'>{food.food_name}</h3>
+                <p className='foodInfo'>{food.ingredient}</p>
+                <p className='foodPrice'>$:{food.price}</p>
+                {user.user_type === 'chef' ?
+                    <div>
+                        <button>Edit</button>
+                        <Delete food={food}/>
                     </div>
-                    : 
-                    <button onClick={onClick} className="btn btn-primary">Add to Cart</button>}
-                </Card>
+                    :
+                    <button>Add to cart</button>
+                }
             </div>
-        </div>
+        </>
     )
 }
 

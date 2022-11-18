@@ -20,10 +20,8 @@ function CustomerProfile({user}) {
 
     return (
         <>
-        <div>
-            <h5>Hello {user.full_name} Welcome!!</h5>
-        </div>
-        <CustomerOrder foods={orderFood}/>
+            <h2 id="customerProfileH2">Hello {user.full_name} Welcome!!</h2>
+            <CustomerOrder foods={orderFood}/>
         </>
     )
 }
