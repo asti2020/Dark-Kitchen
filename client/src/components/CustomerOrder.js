@@ -4,8 +4,8 @@ import { FoodList } from './FoodList'
 export const CustomerOrder = ({foods}) => {
     return (
         <>
-        <div>Order history</div>
-        {foods.length > 0 ? <FoodList foods={foods}/>  : <h5>No previous order</h5>}
+        <h3>Order history</h3>
+        {foods.length > 0 ? <FoodList foods={foods}/>  : <p>No previous order</p>}
         </>
     )
 }
